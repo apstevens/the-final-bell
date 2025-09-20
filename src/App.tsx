@@ -365,7 +365,7 @@ function PriceCard({ label, price, subtitle, bullets, highlight }: { label: stri
         ))}
       </ul>
       <a
-        href="https://wa.me/447000000000?text=Hi%20Andy%2C%20I%27d%20like%20to%20book%20a%20Saturday%20session%20with%20The%20Final%20Bell."
+        href="https://wa.me/447485041755?text=Hi%20Andy%2C%20I%27d%20like%20to%20book%20a%20Saturday%20session%20with%20The%20Final%20Bell."
         className="mt-6 inline-flex items-center justify-center rounded-2xl px-4 py-2 font-semibold shadow-lg hover:opacity-95"
         style={{ backgroundColor: gold, color: "#111" }}
       >
