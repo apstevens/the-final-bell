@@ -56,7 +56,7 @@ export default function TheFinalBellLanding() {
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
             <a
-              href="https://wa.me/447000000000?text=Hi%20Andy%2C%20I%27d%20like%20to%20book%20a%20Saturday%20session%20with%20The%20Final%20Bell."
+              href="https://wa.me/447485041755?text=Hi%20Andy%2C%20I%27d%20like%20to%20book%20a%20Saturday%20session%20with%20The%20Final%20Bell."
               className="rounded-2xl px-5 py-3 text-base font-semibold shadow-lg ring-2 bg-secondary text-neutral-900 hover:opacity-95 hover:bg-primary-dark hover:text-amber-50"
             >
               Book a Session
