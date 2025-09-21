@@ -158,7 +158,7 @@ export default function TheFinalBellLanding() {
             <img
               src={imgUrl}
               alt="Coach Andy in the ring"
-              className="h-full w-full rounded-2xl object-cover shadow-2xl ring-1 ring-primary-dark"
+              className="h-full w-full rounded-2xl object-cover shadow-2xl ring-1 ring-primary-dark opacity-200 md:opacity-50"
             />
             <div className="pointer-events-none absolute inset-0 rounded-2xl ring-2 ring-secondary" />
           </div>
@@ -282,16 +282,16 @@ export default function TheFinalBellLanding() {
             <p className="mt-2 text-neutral-300">Boxing Fitness & Muay Thai Training — Chelmsford (Saturdays)</p>
           </div>
           <div className="space-y-3">
-            <p className="flex items-center gap-2"><Phone className="h-5 w-5" style={{ color: gold }} /><a href="tel:+447485041755"> +44 7485 041755</a></p>
-            <p className="flex items-center gap-2"><Mail className="h-5 w-5" style={{ color: gold }} /> <a href="mailto:hello@finalbell.co.uk">hello@finalbell.co.uk</a></p>
-            <p className="flex items-center gap-2"><Instagram className="h-5 w-5" style={{ color: gold }} /> <a href="https://instagram.com/andy_p_stevens">@andy_p_stevens</a></p>
-            <p className="flex items-center gap-2"><MapPin className="h-5 w-5" style={{ color: gold }} /> Chelmsford, UK</p>
+            <p className="flex items-center gap-2"><Phone className="h-5 w-5 text-secondary" /><a href="tel:+447485041755"> +44 7485 041755</a></p>
+            <p className="flex items-center gap-2"><Mail className="h-5 w-5 text-secondary" /> <a href="mailto:hello@finalbell.co.uk">hello@finalbell.co.uk</a></p>
+            <p className="flex items-center gap-2"><Instagram className="h-5 w-5 text-secondary" /> <a href="https://instagram.com/andy_p_stevens">@andy_p_stevens</a></p>
+            <p className="flex items-center gap-2"><MapPin className="h-5 w-5 text-secondary" /> Chelmsford, UK</p>
           </div>
           <div>
             <h5 className="text-sm font-semibold text-neutral-400">FAQs</h5>
             <ul className="mt-2 space-y-2">
               {faqs.map((f, i) => (
-                <li key={i} className="rounded-xl bg-neutral-900/60 p-3 ring-1 ring-neutral-800">
+                <li key={i} className="rounded-xl bg-neutral-900/60 p-3 ring-1 ring-secondary">
                   <button
                     className="flex w-full items-center justify-between text-left"
                     onClick={() => setOpenFAQ(openFAQ === i ? null : i)}
@@ -306,7 +306,9 @@ export default function TheFinalBellLanding() {
           </div>
         </div>
         <div className="border-t border-neutral-800 py-6 text-center text-sm text-neutral-500">
-          © {new Date().getFullYear()} The Final Bell. All rights reserved.
+          &copy; 2025 The Final Bell. All rights reserved.
+          <a href="./src/assets/privacy-policy.pdf" className="ml-2 hover:underline">Privacy Policy</a>.
+          <a href="#" className="ml-2 hover:underline">Terms of Service</a>.
         </div>
       </footer>
     </div>
@@ -315,8 +317,8 @@ export default function TheFinalBellLanding() {
 
 function ValueCard({ icon, title, desc }: { icon: React.ReactNode; title: string; desc: string }) {
   return (
-    <div className="rounded-2xl bg-neutral-900/60 p-6 ring-1 ring-neutral-800">
-      <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl" style={{ backgroundColor: "#1f1f1f", color: gold }}>
+    <div className="rounded-2xl bg-neutral-900/60 p-6 ring-1 ring-secondary">
+      <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl text-secondary bg-neutral-900">
         {icon}
       </div>
       <h3 className="text-lg font-semibold text-secondary">{title}</h3>
@@ -327,12 +329,12 @@ function ValueCard({ icon, title, desc }: { icon: React.ReactNode; title: string
 
 function ServiceCard({ title, points }: { title: string; points: string[] }) {
   return (
-    <div className="rounded-2xl bg-neutral-900/60 p-6 ring-1 ring-neutral-800">
-      <h3 className="text-xl font-semibold" style={{ color: gold }}>{title}</h3>
+    <div className="rounded-2xl bg-neutral-900/60 p-6 ring-1 ring-secondary">
+      <h3 className="text-xl font-semibold text-secondary">{title}</h3>
       <ul className="mt-4 space-y-2">
         {points.map((p) => (
           <li key={p} className="flex items-start gap-2">
-            <span className="mt-1 inline-block h-2 w-2 rounded-full" style={{ backgroundColor: gold }} />
+            <span className="mt-1 inline-block h-2 w-2 rounded-full bg-secondary" />
             <span className="text-neutral-300">{p}</span>
           </li>
         ))}
@@ -346,7 +348,7 @@ function PriceCard({ label, price, subtitle, bullets, highlight }: { label: stri
     <div
       className={`rounded-2xl p-6 ring-2 ${highlight ? "bg-neutral-900/70" : "bg-neutral-900/60"} ring-secondary`}
     >
-      <h3 className="text-lg font-semibold" style={{ color: gold }}>{label}</h3>
+      <h3 className="text-lg font-semibold text-secondary">{label}</h3>
       <div className="mt-3 flex items-end gap-2">
         <span className="text-4xl font-extrabold">{price}</span>
         <span className="text-sm text-neutral-400">{subtitle}</span>
@@ -354,15 +356,14 @@ function PriceCard({ label, price, subtitle, bullets, highlight }: { label: stri
       <ul className="mt-4 space-y-2">
         {bullets.map((b) => (
           <li key={b} className="flex items-start gap-2">
-            <CheckCircle className="mt-0.5 h-5 w-5" style={{ color: gold }} />
+            <CheckCircle className="mt-0.5 h-5 w-5 text-secondary" />
             <span className="text-neutral-300">{b}</span>
           </li>
         ))}
       </ul>
       <a
         href="https://wa.me/447485041755?text=Hi%20Andy%2C%20I%27d%20like%20to%20book%20a%20Saturday%20session%20with%20The%20Final%20Bell."
-        className="mt-6 inline-flex items-center justify-center rounded-2xl px-4 py-2 font-semibold shadow-lg hover:opacity-95"
-        style={{ backgroundColor: gold, color: "#111" }}
+        className="mt-6 inline-flex items-center justify-center rounded-2xl px-4 py-2 font-semibold shadow-lg hover:opacity-95 bg-secondary text-neutral-950 hover:bg-primary-dark hover:text-amber-50"
       >
         Book Online
       </a>
