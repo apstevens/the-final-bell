@@ -7,7 +7,6 @@ import imgurl1 from './assets//boxing.jpg';
 import imgurl2 from './assets/finalBellLogoHorizontal.png';
 
 // Brand colours
-const burgundy = "#800020";
 const gold = "#FFD700";
 
 export default function TheFinalBellLanding() {
@@ -81,7 +80,7 @@ export default function TheFinalBellLanding() {
       {/* Services */}
       <section id="services" className="bg-neutral-900/60">
         <div className="mx-auto max-w-6xl px-6 py-16 md:px-8">
-          <h2 className="text-3xl font-bold md:text-4xl" style={{ color: gold }}>What We Offer</h2>
+          <h2 className="text-3xl font-bold md:text-4xl text-secondary">What We Offer</h2>
           <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
             <ServiceCard
               title="1:1 Personal Training"
@@ -101,9 +100,9 @@ export default function TheFinalBellLanding() {
 
       {/* Pricing */}
       <section id="pricing" className="mx-auto max-w-6xl px-6 py-16 md:px-8">
-        <h2 className="text-3xl font-bold md:text-4xl" style={{ color: gold }}>Pricing</h2>
+        <h2 className="text-3xl font-bold md:text-4xl text-secondary" >Pricing</h2>
         <p className="mt-2 text-neutral-300">Intro offer available for first‑time clients.</p>
-        <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-4">
+        <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-4 ">
           <PriceCard
             label="1:1 Session"
             price="£40"
@@ -136,7 +135,7 @@ export default function TheFinalBellLanding() {
       <section className="bg-neutral-900/60">
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-6 py-16 md:grid-cols-2 md:px-8">
           <div>
-            <h2 className="text-3xl font-bold md:text-4xl" style={{ color: gold }}>Meet Your Coach</h2>
+            <h2 className="text-3xl font-bold md:text-4xl text-secondary">Meet Your Coach</h2>
             <p className="mt-4 text-neutral-300">
               I'm <span className="font-semibold">Andy</span> — former fighter and 
               specialist PT in boxing and Muay Thai conditioning. I combine practical ring craft with structured S&C so you build 
@@ -149,7 +148,7 @@ export default function TheFinalBellLanding() {
                 "Supportive, motivating environment",
               ].map((t) => (
                 <li key={t} className="flex items-start gap-2">
-                  <CheckCircle style={{ color: gold }} className="mt-1 h-5 w-5 flex-none" />
+                  <CheckCircle className="mt-1 h-5 w-5 flex-none text-secondary" />
                   <span>{t}</span>
                 </li>
               ))}
@@ -159,16 +158,16 @@ export default function TheFinalBellLanding() {
             <img
               src={imgUrl}
               alt="Coach Andy in the ring"
-              className="h-full w-full rounded-2xl object-cover shadow-2xl ring-1 ring-neutral-800"
+              className="h-full w-full rounded-2xl object-cover shadow-2xl ring-1 ring-primary-dark"
             />
-            <div className="pointer-events-none absolute inset-0 rounded-2xl ring-2" style={{ borderColor: burgundy }} />
+            <div className="pointer-events-none absolute inset-0 rounded-2xl ring-2 ring-secondary" />
           </div>
         </div>
       </section>
 
       {/* Testimonials */}
       <section className="mx-auto max-w-6xl px-6 py-16 md:px-8">
-        <h2 className="text-3xl font-bold md:text-4xl" style={{ color: gold }}>Client Results</h2>
+        <h2 className="text-3xl font-bold md:text-4xl text-secondary">Client Results</h2>
         <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
           {[
             {
@@ -188,7 +187,7 @@ export default function TheFinalBellLanding() {
             },
           ].map((t, i) => (
             <blockquote key={i} className="rounded-2xl bg-neutral-900/60 p-6 ring-1 ring-neutral-800">
-              <Sparkles className="h-6 w-6" style={{ color: gold }} />
+              <Sparkles className="h-6 w-6 bg-secondary" />
               <p className="mt-3 text-neutral-200">“{t.quote}”</p>
               <footer className="mt-4 text-sm text-neutral-400">— {t.name}</footer>
             </blockquote>
@@ -206,8 +205,8 @@ export default function TheFinalBellLanding() {
           <div className="flex gap-3">
             <a
               href="#book"
-              className="inline-flex items-center gap-2 rounded-2xl px-5 py-3 font-semibold shadow-lg"
-              style={{ backgroundColor: gold, color: "#111" }}
+              className="inline-flex items-center gap-2 rounded-2xl px-5 py-3 font-semibold shadow-lg bg-secondary"
+              style={{ color: "#111" }}
             >
               Book Online <ChevronRight className="h-5 w-5" />
             </a>
@@ -223,7 +222,7 @@ export default function TheFinalBellLanding() {
 
       {/* Booking Section */}
       <section id="book" className="mx-auto max-w-6xl px-6 py-16 md:px-8">
-        <h2 className="text-3xl font-bold md:text-4xl" style={{ color: gold }}>Book & Pay</h2>
+        <h2 className="text-3xl font-bold md:text-4xl text-secondary">Book & Pay</h2>
         <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-3">
           <div className="md:col-span-2">
             <p className="text-neutral-300">Choose a Saturday slot below. Bookings are managed securely via Calendly.</p>
@@ -235,35 +234,35 @@ export default function TheFinalBellLanding() {
             </div>
           </div>
           <div className="rounded-2xl bg-neutral-900/60 p-6 ring-1 ring-neutral-800">
-            <h3 className="text-xl font-semibold" style={{ color: gold }}>Complete Payment</h3>
+            <h3 className="text-xl font-semibold text-secondary">Complete Payment</h3>
             <p className="mt-2 text-neutral-300">
               To confirm your booking, please complete payment after selecting your time.
             </p>
             <ul className="mt-4 space-y-2">
               <li className="flex items-start gap-2">
-                <CheckCircle className="mt-0.5 h-5 w-5" style={{ color: gold }} />
+                <CheckCircle className="mt-0.5 h-5 w-5 bg-secondary" />
                 <span className="text-neutral-300">30 minute 1:1 Session — <strong>£20</strong></span>
               </li>
               <li className="flex items-start gap-2">
-                <CheckCircle className="mt-0.5 h-5 w-5" style={{ color: gold }} />
+                <CheckCircle className="mt-0.5 h-5 w-5 bg-secondary" />
                 <span className="text-neutral-300">60 minute 1:1 Session — <strong>£40</strong></span>
               </li>
               <li className="flex items-start gap-2">
-                <CheckCircle className="mt-0.5 h-5 w-5" style={{ color: gold }} />
+                <CheckCircle className="mt-0.5 h-5 w-5 bg-secondary" />
                 <span className="text-neutral-300">Small Group (2–4) — <strong>£25 pp</strong></span>
               </li>
             </ul>
             <a
               href="https://calendly.com/nakmuayandy/30min"
-              className="mt-5 block rounded-2xl px-4 py-3 text-center font-semibold shadow-lg"
-              style={{ backgroundColor: gold, color: "#111" }}
+              className="mt-5 block rounded-2xl px-4 py-3 text-center font-semibold shadow-lg bg-secondary"
+              style={{  color: "#111" }}
             >
               Pay for 30 minute 1:1 Session
             </a>
             <a
               href="https://calendly.com/nakmuayandy/60-minute-pt"
-              className="mt-5 block rounded-2xl px-4 py-3 text-center font-semibold shadow-lg"
-              style={{ backgroundColor: gold, color: "#111" }}
+              className="mt-5 block rounded-2xl px-4 py-3 text-center font-semibold shadow-lg bg-secondary"
+              style={{ color: "#111" }}
             >
               Pay for 60 minute 1:1 Session
             </a>
@@ -282,14 +281,14 @@ export default function TheFinalBellLanding() {
       <footer className="border-t border-neutral-800">
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-6 py-12 md:grid-cols-3 md:px-8">
           <div>
-            <h4 className="text-xl font-bold" style={{ color: gold }}>The Final Bell</h4>
+            <h4 className="text-xl font-bold text-secondary">The Final Bell</h4>
             <p className="mt-2 text-neutral-300">Boxing Fitness & Muay Thai Training — Chelmsford (Saturdays)</p>
           </div>
           <div className="space-y-3">
-            <p className="flex items-center gap-2"><Phone className="h-5 w-5" style={{ color: gold }} /> +44 7485 041755</p>
-            <p className="flex items-center gap-2"><Mail className="h-5 w-5" style={{ color: gold }} /> hello@finalbell.co.uk</p>
-            <p className="flex items-center gap-2"><Instagram className="h-5 w-5" style={{ color: gold }} /> @andy_p_stevens</p>
-            <p className="flex items-center gap-2"><MapPin className="h-5 w-5" style={{ color: gold }} /> Chelmsford, UK</p>
+            <p className="flex items-center gap-2"><Phone className="h-5 w-5 text-secondary" /> +44 7485 041755</p>
+            <p className="flex items-center gap-2"><Mail className="h-5 w-5 text-secondary" /> hello@finalbell.co.uk</p>
+            <p className="flex items-center gap-2"><Instagram className="h-5 w-5 text-secondary" /> @andy_p_stevens</p>
+            <p className="flex items-center gap-2"><MapPin className="h-5 w-5 text-secondary" /> Chelmsford, UK</p>
           </div>
           <div>
             <h5 className="text-sm font-semibold text-neutral-400">FAQs</h5>
@@ -320,7 +319,7 @@ export default function TheFinalBellLanding() {
 function ValueCard({ icon, title, desc }: { icon: React.ReactNode; title: string; desc: string }) {
   return (
     <div className="rounded-2xl bg-neutral-900/60 p-6 ring-1 ring-neutral-800">
-      <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl" style={{ backgroundColor: "#1f1f1f", color: gold }}>
+      <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl text-secondary" style={{ backgroundColor: "#1f1f1f" }}>
         {icon}
       </div>
       <h3 className="text-lg font-semibold text-secondary">{title}</h3>
@@ -348,8 +347,7 @@ function ServiceCard({ title, points }: { title: string; points: string[] }) {
 function PriceCard({ label, price, subtitle, bullets, highlight }: { label: string; price: string; subtitle: string; bullets: string[]; highlight?: boolean }) {
   return (
     <div
-      className={`rounded-2xl p-6 ring-2 ${highlight ? "bg-neutral-900/70" : "bg-neutral-900/60"}`}
-      style={{ borderColor: highlight ? gold : "#2a2a2a" }}
+      className={`rounded-2xl p-6 ring-2 ${highlight ? "bg-neutral-900/70" : "bg-neutral-900/60"} ring-secondary`}
     >
       <h3 className="text-lg font-semibold" style={{ color: gold }}>{label}</h3>
       <div className="mt-3 flex items-end gap-2">
