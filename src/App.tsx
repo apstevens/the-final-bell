@@ -206,7 +206,6 @@ export default function TheFinalBellLanding() {
             <a
               href="#book"
               className="inline-flex items-center gap-2 rounded-2xl px-5 py-3 font-semibold shadow-lg bg-secondary hover:bg-primary-dark hover:text-amber-50"
-              style={{ color: "#111" }}
             >
               Book Online <ChevronRight className="h-5 w-5" />
             </a>
