@@ -205,14 +205,14 @@ export default function TheFinalBellLanding() {
           <div className="flex gap-3">
             <a
               href="#book"
-              className="inline-flex items-center gap-2 rounded-2xl px-5 py-3 font-semibold shadow-lg bg-secondary"
+              className="inline-flex items-center gap-2 rounded-2xl px-5 py-3 font-semibold shadow-lg bg-secondary hover:bg-primary-dark hover:text-amber-50"
               style={{ color: "#111" }}
             >
               Book Online <ChevronRight className="h-5 w-5" />
             </a>
             <a
               href="mailto:hello@thefinalbell.co.uk?subject=Booking%20enquiry"
-              className="rounded-2xl px-5 py-3 font-semibold ring-2 ring-neutral-700 hover:bg-neutral-800"
+              className="rounded-2xl px-5 py-3 font-semibold ring-2 ring-neutral-700 hover:bg-secondary hover:text-neutral-900"
             >
               Email Enquiry
             </a>
