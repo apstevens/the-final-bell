@@ -1,10 +1,17 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css'
 import App from './App.tsx'
+import PrivacyPolicy from './pages/PrivacyPolicy.tsx';
+import TermsOfService from './pages/TermsOfService.tsx';
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/terms-of-service" element={<TermsOfService />} />
+      <Route path="*" element={<h1 className="min-h-screen flex items-center justify-center bg-neutral-900 text-neutral-100">404 - Page Not Found</h1>} />
+    </Routes>
+  </BrowserRouter>
+);

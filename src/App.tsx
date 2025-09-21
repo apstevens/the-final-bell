@@ -307,8 +307,8 @@ export default function TheFinalBellLanding() {
         </div>
         <div className="border-t border-neutral-800 py-6 text-center text-sm text-neutral-500">
           &copy; 2025 The Final Bell. All rights reserved.
-          <a href="./src/assets/privacy-policy.pdf" className="ml-2 hover:underline">Privacy Policy</a>.
-          <a href="#" className="ml-2 hover:underline">Terms of Service</a>.
+          <a href="/privacy-policy" className="ml-2 hover:underline">Privacy Policy</a>.
+          <a href="/terms-of-service" className="ml-2 hover:underline">Terms of Service</a>.
         </div>
       </footer>
     </div>
