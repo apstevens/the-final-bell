@@ -281,14 +281,14 @@ export default function TheFinalBellLanding() {
       <footer className="border-t border-neutral-800">
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-6 py-12 md:grid-cols-3 md:px-8">
           <div>
-            <h4 className="text-xl font-bold text-secondary">The Final Bell</h4>
+            <h4 className="text-xl font-bold text-secondary" style={{ color: gold }}>The Final Bell</h4>
             <p className="mt-2 text-neutral-300">Boxing Fitness & Muay Thai Training — Chelmsford (Saturdays)</p>
           </div>
           <div className="space-y-3">
-            <p className="flex items-center gap-2"><Phone className="h-5 w-5 text-secondary" /> +44 7485 041755</p>
-            <p className="flex items-center gap-2"><Mail className="h-5 w-5 text-secondary" /> hello@finalbell.co.uk</p>
-            <p className="flex items-center gap-2"><Instagram className="h-5 w-5 text-secondary" /> @andy_p_stevens</p>
-            <p className="flex items-center gap-2"><MapPin className="h-5 w-5 text-secondary" /> Chelmsford, UK</p>
+            <p className="flex items-center gap-2"><Phone className="h-5 w-5" style={{ color: gold }} /> +44 7485 041755</p>
+            <p className="flex items-center gap-2"><Mail className="h-5 w-5" style={{ color: gold }} /> hello@finalbell.co.uk</p>
+            <p className="flex items-center gap-2"><Instagram className="h-5 w-5" style={{ color: gold }} /> @andy_p_stevens</p>
+            <p className="flex items-center gap-2"><MapPin className="h-5 w-5" style={{ color: gold }} /> Chelmsford, UK</p>
           </div>
           <div>
             <h5 className="text-sm font-semibold text-neutral-400">FAQs</h5>
@@ -319,7 +319,7 @@ export default function TheFinalBellLanding() {
 function ValueCard({ icon, title, desc }: { icon: React.ReactNode; title: string; desc: string }) {
   return (
     <div className="rounded-2xl bg-neutral-900/60 p-6 ring-1 ring-neutral-800">
-      <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl text-secondary" style={{ backgroundColor: "#1f1f1f" }}>
+      <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl" style={{ backgroundColor: "#1f1f1f", color: gold }}>
         {icon}
       </div>
       <h3 className="text-lg font-semibold text-secondary">{title}</h3>
