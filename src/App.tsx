@@ -186,8 +186,8 @@ export default function TheFinalBellLanding() {
               name: "James, Springfield",
             },
           ].map((t, i) => (
-            <blockquote key={i} className="rounded-2xl bg-neutral-900/60 p-6 ring-1 ring-neutral-800">
-              <Sparkles className="h-6 w-6 bg-secondary" />
+            <blockquote key={i} className="rounded-2xl bg-neutral-900/60 p-6 ring-1 ring-secondary">
+              <Sparkles className="h-6 w-6 bg-ring-neutral-900" />
               <p className="mt-3 text-neutral-200">“{t.quote}”</p>
               <footer className="mt-4 text-sm text-neutral-400">— {t.name}</footer>
             </blockquote>
@@ -205,8 +205,7 @@ export default function TheFinalBellLanding() {
           <div className="flex gap-3">
             <a
               href="#book"
-              className="inline-flex items-center gap-2 rounded-2xl px-5 py-3 font-semibold shadow-lg bg-secondary hover:bg-primary-dark hover:text-amber-50"
-            >
+              className="inline-flex items-center gap-2 rounded-2xl px-5 py-3 font-semibold shadow-lg bg-secondary text-neutral-950 hover:bg-primary-dark hover:text-amber-50">
               Book Online <ChevronRight className="h-5 w-5" />
             </a>
             <a
@@ -227,47 +226,46 @@ export default function TheFinalBellLanding() {
             <p className="text-neutral-300">Choose a Saturday slot below. Bookings are managed securely via Calendly.</p>
             <div className="mt-4 overflow-hidden rounded-2xl ring-1 ring-neutral-800">
               <InlineWidget
-                url="https://calendly.com/nakmuayandy/new-meeting"
+                url="https://calendly.com/thefinalbell/"
                 styles={{ height: 700 }}
               />
             </div>
           </div>
-          <div className="rounded-2xl bg-neutral-900/60 p-6 ring-1 ring-neutral-800">
+          <div className="rounded-2xl bg-neutral-900/60 p-6 ring-1 ring-secondary">
             <h3 className="text-xl font-semibold text-secondary">Complete Payment</h3>
             <p className="mt-2 text-neutral-300">
               To confirm your booking, please complete payment after selecting your time.
             </p>
             <ul className="mt-4 space-y-2">
               <li className="flex items-start gap-2">
-                <CheckCircle className="mt-0.5 h-5 w-5 bg-secondary" />
+                <CheckCircle className="mt-0.5 h-5 w-5 text-secondary" />
                 <span className="text-neutral-300">30 minute 1:1 Session — <strong>£20</strong></span>
               </li>
               <li className="flex items-start gap-2">
-                <CheckCircle className="mt-0.5 h-5 w-5 bg-secondary" />
+                <CheckCircle className="mt-0.5 h-5 w-5 text-secondary" />
                 <span className="text-neutral-300">60 minute 1:1 Session — <strong>£40</strong></span>
               </li>
               <li className="flex items-start gap-2">
-                <CheckCircle className="mt-0.5 h-5 w-5 bg-secondary" />
+                <CheckCircle className="mt-0.5 h-5 w-5 text-secondary" />
                 <span className="text-neutral-300">Small Group (2–4) — <strong>£25 pp</strong></span>
               </li>
             </ul>
             <a
               href="https://calendly.com/nakmuayandy/30min"
-              className="mt-5 block rounded-2xl px-4 py-3 text-center font-semibold shadow-lg bg-secondary"
-              style={{  color: "#111" }}
+              className="mt-5 block rounded-2xl px-4 py-3 text-center font-semibold shadow-lg bg-secondary text-neutral-950 hover:bg-primary hover:text-amber-50"
+
             >
               Pay for 30 minute 1:1 Session
             </a>
             <a
               href="https://calendly.com/nakmuayandy/60-minute-pt"
-              className="mt-5 block rounded-2xl px-4 py-3 text-center font-semibold shadow-lg bg-secondary"
-              style={{ color: "#111" }}
+              className="mt-5 block rounded-2xl px-4 py-3 text-center font-semibold shadow-lg bg-secondary text-neutral-950 hover:bg-primary hover:text-amber-50"
             >
               Pay for 60 minute 1:1 Session
             </a>
             <a
               href="https://calendly.com/nakmuayandy/new-meeting"
-              className="mt-3 block rounded-2xl px-4 py-3 text-center font-semibold ring-2 ring-neutral-700 hover:bg-neutral-800"
+              className="mt-3 block rounded-2xl px-4 py-3 text-center font-semibold ring-2 ring-neutral-700 hover:bg-secondary hover:text-neutral-900"
             >
               Pay for Group Session
             </a>
