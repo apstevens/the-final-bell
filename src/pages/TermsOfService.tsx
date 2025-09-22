@@ -3,7 +3,7 @@ import img from '../assets/finalBellLogo.png'
 export default function TermsOfService() {
   return (
     <div className="min-h-screen w-full bg-neutral-900 text-neutral-100">
-        <img src={img} alt="The Final Bell Logo" className="mx-auto my-6 w-md"/>
+        <a href='/'><img src={img} alt="The Final Bell Logo" className="mx-auto my-6 w-md hover:rotate-45"/></a>
         <main className="max-w-3xl mx-auto px-6 md:px-8 py-12 text-neutral-200">
             <h1 className="text-3xl font-bold text-secondary">The Final Bell – Terms &amp; Conditions</h1>
             <p className="mt-2 text-sm text-neutral-400">
