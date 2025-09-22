@@ -41,32 +41,32 @@ export default function TheFinalBellLanding() {
           className="absolute inset-0 h-full w-full object-cover opacity-35"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
-        <div className="relative mx-auto flex max-w-6xl flex-col items-start gap-6 px-6 py-12 md:px-8 md:py-4">
-          <span className="text-sm font-semibold tracking-wider text-secondary">
+          <div className="relative mx-auto flex max-w-6xl flex-col items-start gap-6 px-6 py-12 md:px-8 md:py-4">
+            <span className="text-sm font-semibold tracking-wider text-secondary">
             Every Saturday — Chelmsford
-          </span>
-          <h1 className="text-4xl font-extrabold leading-tight sm:text-5xl md:text-6xl">
-            <img src={imgurl2} alt="The Final Bell Logo" className="w-md" />
-            <span className="block mt-2 text-secondary">Boxing Fitness & Muay Thai Training</span>
-          </h1>
-          <p className="max-w-2xl text-lg text-neutral-200">
+            </span>
+            <h1 className="text-3xl font-extrabold leading-tight sm:text-4xl md:text-4xl">
+              <img src={imgurl2} alt="The Final Bell Logo" className="inline-block w-3xs" />
+              <span className="block mt-2 text-secondary"> Boxing Fitness & Muay Thai Training</span>
+            </h1>
+            <p className="max-w-2xl text-lg text-neutral-200">
             High‑impact, technique‑led sessions with <span className="font-semibold">Andy Stevens</span> — PT & former fighter. 
             Burn fat, build strength, and learn authentic skills.
-          </p>
-          <div className="mt-4 flex flex-wrap gap-3">
-            <a
+            </p>
+            <div className="mt-4 flex flex-wrap gap-3">
+              <a
               href="https://wa.me/447485041755?text=Hi%20Andy%2C%20I%27d%20like%20to%20book%20a%20Saturday%20session%20with%20The%20Final%20Bell."
               className="rounded-2xl px-5 py-3 text-base font-semibold shadow-lg ring-2 bg-secondary text-neutral-900 hover:opacity-95 hover:bg-primary-dark hover:text-amber-50"
-            >
-              Book a Session
-            </a>
-            <a
-              href="#pricing"
-              className="rounded-2xl px-5 py-3 text-base font-semibold ring-2 ring-neutral-700 hover:bg-secondary hover:text-neutral-900"
-            >
-              View Pricing
-            </a>
-          </div>
+              >
+                Book a Session
+              </a>
+              <a
+                href="#pricing"
+                className="rounded-2xl px-5 py-3 text-base font-semibold ring-2 ring-neutral-700 hover:bg-secondary hover:text-neutral-900"
+              >
+                View Pricing
+              </a>
+            </div>
         </div>
       </header>
 
@@ -104,13 +104,13 @@ export default function TheFinalBellLanding() {
         <p className="mt-2 text-neutral-300">Intro offer available for first‑time clients.</p>
         <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-4 ">
           <PriceCard
-            label="1:1 Session"
+            label="60 Minute 1:1 Session"
             price="£40"
             subtitle="per 60 mins"
             bullets={["Technique focus", "Strength & conditioning", "Progress tracking"]}
           />
           <PriceCard
-            label="1:1 Session"
+            label="30 Minute 1:1 Session"
             price="£20"
             subtitle="per 30 mins"
             bullets={["Technique focus", "Strength & conditioning", "Progress tracking"]}
@@ -343,7 +343,7 @@ function ServiceCard({ title, points }: { title: string; points: string[] }) {
   );
 }
 
-function PriceCard({ label, price, subtitle, bullets, highlight }: { label: string; price: string; subtitle: string; bullets: string[]; highlight?: boolean }) {
+function PriceCard({ label, price, subtitle, bullets, highlight }: { label: string; price: string; subtitle: string; bullets: string[]; highlight?: boolean; }) {
   return (
     <div
       className={`rounded-2xl p-6 ring-2 ${highlight ? "bg-neutral-900/70" : "bg-neutral-900/60"} ring-secondary`}
@@ -362,7 +362,7 @@ function PriceCard({ label, price, subtitle, bullets, highlight }: { label: stri
         ))}
       </ul>
       <a
-        href="https://wa.me/447485041755?text=Hi%20Andy%2C%20I%27d%20like%20to%20book%20a%20Saturday%20session%20with%20The%20Final%20Bell."
+        href="https://calendly.com/thefinalbell/"
         className="mt-6 inline-flex items-center justify-center rounded-2xl px-4 py-2 font-semibold shadow-lg hover:opacity-95 bg-secondary text-neutral-950 hover:bg-primary-dark hover:text-amber-50"
       >
         Book Online
