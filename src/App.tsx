@@ -247,7 +247,7 @@ export default function TheFinalBellLanding() {
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle className="mt-0.5 h-5 w-5 text-secondary" />
-                <span className="text-neutral-300">Small Group (2–4) — <strong>£</strong></span>
+                <span className="text-neutral-300">Small Group (2–4) — <strong>£500</strong></span>
               </li>
             </ul>
             <a
@@ -362,7 +362,7 @@ function PriceCard({ label, price, subtitle, bullets, highlight }: { label: stri
         ))}
       </ul>
       <a
-        href="https://wa.me/447485041755?text={Hi%20Andy%2C%20I%27d%20like%20to%20book%20a%20Saturday%20session%20with%20The%20Final%20Bell.}"
+        href="https://wa.me/447485041755?text=Hi%20Andy%2C%20I%27d%20like%20to%20book%20a%20Saturday%20session%20with%20The%20Final%20Bell."
         className="mt-6 inline-flex items-center justify-center rounded-2xl px-4 py-2 font-semibold shadow-lg hover:opacity-95 bg-secondary text-neutral-950 hover:bg-primary-dark hover:text-amber-50"
       >
         Book Online
