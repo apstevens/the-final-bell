@@ -105,21 +105,21 @@ export default function TheFinalBellLanding() {
         <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-4 ">
           <PriceCard
             label="60 Minute 1:1 Session"
-            price="£40"
-            subtitle="per 60 mins"
+            price="£200"
+            subtitle="per 5 weeks"
             bullets={["Technique focus", "Strength & conditioning", "Progress tracking"]}
           />
           <PriceCard
             label="30 Minute 1:1 Session"
-            price="£20"
-            subtitle="per 30 mins"
+            price="£100"
+            subtitle="per 5 weeks"
             bullets={["Technique focus", "Strength & conditioning", "Progress tracking"]}
           />
           <PriceCard
             highlight
             label="Small Group (2–4)"
-            price="£25"
-            subtitle="per person / 60 mins"
+            price="£500"
+            subtitle="per 5 weeks"
             bullets={["Shared cost, same intensity", "Partner drills", "Great for friends/couples"]}
           />
           <PriceCard
@@ -239,35 +239,35 @@ export default function TheFinalBellLanding() {
             <ul className="mt-4 space-y-2">
               <li className="flex items-start gap-2">
                 <CheckCircle className="mt-0.5 h-5 w-5 text-secondary" />
-                <span className="text-neutral-300">30 minute 1:1 Session — <strong>£20</strong></span>
+                <span className="text-neutral-300">5 x 30 minute 1:1 Session — <strong>£100</strong></span>
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle className="mt-0.5 h-5 w-5 text-secondary" />
-                <span className="text-neutral-300">60 minute 1:1 Session — <strong>£40</strong></span>
+                <span className="text-neutral-300">5 x 60 minute 1:1 Session — <strong>£200</strong></span>
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle className="mt-0.5 h-5 w-5 text-secondary" />
-                <span className="text-neutral-300">Small Group (2–4) — <strong>£25 pp</strong></span>
+                <span className="text-neutral-300">Small Group (2–4) — <strong>£</strong></span>
               </li>
             </ul>
             <a
-              href="https://calendly.com/nakmuayandy/30min"
+              href="https://buy.stripe.com/28EaEX0fD1o5aCv6ql8IU02" target="_blank"
               className="mt-5 block rounded-2xl px-4 py-3 text-center font-semibold shadow-lg bg-secondary text-neutral-950 hover:bg-primary hover:text-amber-50"
 
             >
-              Pay for 30 minute 1:1 Session
+              Buy 5 x 30-Minute 1:1 Sessions
             </a>
             <a
-              href="https://calendly.com/nakmuayandy/60-minute-pt"
+              href="https://buy.stripe.com/3cI8wPfax5El25ZaGB8IU01" target="_blank"
               className="mt-5 block rounded-2xl px-4 py-3 text-center font-semibold shadow-lg bg-secondary text-neutral-950 hover:bg-primary hover:text-amber-50"
             >
-              Pay for 60 minute 1:1 Session
+              Buy 5 x 60-Minute 1:1 Sessions
             </a>
             <a
-              href="https://calendly.com/nakmuayandy/new-meeting"
+              href="https://buy.stripe.com/dRm8wP8M90k1dOH2a58IU00" target="_blank"
               className="mt-3 block rounded-2xl px-4 py-3 text-center font-semibold ring-2 ring-neutral-700 hover:bg-secondary hover:text-neutral-900"
             >
-              Pay for Group Session
+              Buy 5 x Small Group Sessions
             </a>
             <p className="mt-3 text-xs text-neutral-400">Payments processed by Stripe. You’ll receive an email confirmation and receipt.</p>
           </div>
