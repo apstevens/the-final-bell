@@ -11,7 +11,7 @@ export default function MembersBook() {
       <div className="mt-6 overflow-hidden rounded-2xl ring-1 ring-neutral-800">
         <InlineWidget
           // Use a Calendly event/link that is NOT listed publicly
-          url="https://calendly.com/thefinalbell/private-booking"
+          url="https://calendly.com/thefinalbell/60-minute-pt"
           styles={{ height: 720 }}
         />
       </div>
