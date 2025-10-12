@@ -218,61 +218,61 @@ export default function TheFinalBellLanding() {
         </div>
       </section>
 
-      {/* Booking Section */}
-      <section id="book" className="mx-auto max-w-6xl px-6 py-16 md:px-8">
-        <h2 className="text-3xl font-bold md:text-4xl text-secondary">Book & Pay</h2>
-        <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-3">
-          <div className="md:col-span-2">
-            <p className="text-neutral-300">Choose a Saturday slot below. Bookings are managed securely via Calendly.</p>
-            <div className="mt-4 overflow-hidden rounded-2xl ring-1 ring-neutral-800">
-              <InlineWidget
-                url="https://calendly.com/thefinalbell/"
-                styles={{ height: 700 }}
-              />
-            </div>
-          </div>
-          <div className="rounded-2xl bg-neutral-900/60 p-6 ring-1 ring-secondary">
-            <h3 className="text-xl font-semibold text-secondary">Complete Payment</h3>
-            <p className="mt-2 text-neutral-300">
-              To confirm your booking, please complete payment after selecting your time.
-            </p>
-            <ul className="mt-4 space-y-2">
-              <li className="flex items-start gap-2">
-                <CheckCircle className="mt-0.5 h-5 w-5 text-secondary" />
-                <span className="text-neutral-300">5 x 30 minute 1:1 Session — <strong>£100</strong></span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle className="mt-0.5 h-5 w-5 text-secondary" />
-                <span className="text-neutral-300">5 x 60 minute 1:1 Session — <strong>£200</strong></span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle className="mt-0.5 h-5 w-5 text-secondary" />
-                <span className="text-neutral-300">Small Group (2–4) — <strong>£500</strong></span>
-              </li>
-            </ul>
-            <a
-              href="https://buy.stripe.com/28EaEX0fD1o5aCv6ql8IU02" target="_blank"
-              className="mt-5 block rounded-2xl px-4 py-3 text-center font-semibold shadow-lg bg-secondary text-neutral-950 hover:bg-primary hover:text-amber-50"
+     {/* Booking Section (Pay first → redirect to members booking) */}
+<section id="book" className="mx-auto max-w-6xl px-6 py-16 md:px-8">
+  <h2 className="text-3xl font-bold md:text-4xl text-secondary">Buy a Pack</h2>
+  <p className="mt-2 text-neutral-300">
+    Purchase a 5-session pack. After checkout you’ll be automatically redirected to the members booking page
+    to schedule your Saturday sessions (<strong>08:00–10:00</strong> and <strong>11:00–15:00</strong>).
+  </p>
 
-            >
-              Buy 5 x 30-Minute 1:1 Sessions
-            </a>
-            <a
-              href="https://buy.stripe.com/3cI8wPfax5El25ZaGB8IU01" target="_blank"
-              className="mt-5 block rounded-2xl px-4 py-3 text-center font-semibold shadow-lg bg-secondary text-neutral-950 hover:bg-primary hover:text-amber-50"
-            >
-              Buy 5 x 60-Minute 1:1 Sessions
-            </a>
-            <a
-              href="https://buy.stripe.com/dRm8wP8M90k1dOH2a58IU00" target="_blank"
-              className="mt-3 block rounded-2xl px-4 py-3 text-center font-semibold ring-2 ring-neutral-700 hover:bg-secondary hover:text-neutral-900"
-            >
-              Buy 5 x Small Group Sessions
-            </a>
-            <p className="mt-3 text-xs text-neutral-400">Payments processed by Stripe. You’ll receive an email confirmation and receipt.</p>
-          </div>
-        </div>
-      </section>
+  <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
+    <div className="rounded-2xl bg-neutral-900/60 p-6 ring-1 ring-secondary">
+      <h3 className="text-xl font-semibold text-secondary">5 × 30-Minute 1:1</h3>
+      <p className="mt-2 text-neutral-300">Technique focus, fast and efficient.</p>
+      <p className="mt-3 text-3xl font-extrabold">£100</p>
+      <a
+        href="https://buy.stripe.com/28EaEX0fD1o5aCv6ql8IU02"
+        target="_blank" rel="noreferrer"
+        className="mt-5 block rounded-2xl px-4 py-3 text-center font-semibold shadow-lg bg-secondary text-neutral-950 hover:bg-primary-dark"
+      >
+        Buy 5 × 30-Minute Sessions
+      </a>
+    </div>
+
+    <div className="rounded-2xl bg-neutral-900/60 p-6 ring-1 ring-secondary">
+      <h3 className="text-xl font-semibold text-secondary">5 × 60-Minute 1:1</h3>
+      <p className="mt-2 text-neutral-300">Deeper technical work + conditioning.</p>
+      <p className="mt-3 text-3xl font-extrabold">£200</p>
+      <a
+        href="https://buy.stripe.com/3cI8wPfax5El25ZaGB8IU01"
+        target="_blank" rel="noreferrer"
+        className="mt-5 block rounded-2xl px-4 py-3 text-center font-semibold shadow-lg bg-secondary text-neutral-950 hover:bg-primary-dark"
+      >
+        Buy 5 × 60-Minute Sessions
+      </a>
+    </div>
+
+    <div className="rounded-2xl bg-neutral-900/60 p-6 ring-1 ring-secondary">
+      <h3 className="text-xl font-semibold text-secondary">5 × Small Group (2–4)</h3>
+      <p className="mt-2 text-neutral-300">Partner drills, high energy, shared cost.</p>
+      <p className="mt-3 text-3xl font-extrabold">£500</p>
+      <a
+        href="https://buy.stripe.com/dRm8wP8M90k1dOH2a58IU00"
+        target="_blank" rel="noreferrer"
+        className="mt-5 block rounded-2xl px-4 py-3 text-center font-semibold ring-2 ring-neutral-700 hover:bg-secondary hover:text-neutral-900"
+      >
+        Buy 5 × Small Group Sessions
+      </a>
+    </div>
+  </div>
+
+  <p className="mt-4 text-xs text-neutral-400">
+    Payments processed by Stripe. You’ll receive an email receipt. After payment you’ll be redirected to
+    <code className="mx-1 rounded bg-neutral-800 px-1 py-0.5">/members/book</code> to schedule.
+  </p>
+</section>
+
 
       {/* Contact */}
       <footer className="border-t border-neutral-800">
