@@ -70,14 +70,14 @@ export default function TheFinalBellLanding() {
       </header>
 
       {/* Trust / Value props */}
-      <section className="mx-auto grid max-w-6xl grid-cols-1 gap-6 px-6 py-12 md:grid-cols-3 md:px-8">
+      <section className="mx-auto grid max-w-6xl grid-cols-1 gap-6 px-6 py-12 md:grid-cols-3 md:px-8" aria-label="Key training principles">
         <ValueCard icon={<ShieldCheck />} title="Safe & Technical" desc="Proper boxing/Muay Thai fundamentals with injury‑aware coaching." />
         <ValueCard icon={<Dumbbell />} title="Strength & Conditioning" desc="Programming that improves power, stamina, and mobility." />
         <ValueCard icon={<Clock />} title="Saturday‑Only Focus" desc="Peak‑efficiency sessions designed for busy schedules." />
       </section>
 
       {/* Services */}
-      <section id="services" className="bg-neutral-900/60">
+      <section id="services" className="bg-neutral-900/60" aria-label="Training services">
         <div className="mx-auto max-w-6xl px-6 py-16 md:px-8">
           <h2 className="text-3xl font-bold md:text-4xl text-secondary">What We Offer</h2>
           <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -98,7 +98,7 @@ export default function TheFinalBellLanding() {
       </section>
 
       {/* Pricing */}
-      <section id="pricing" className="mx-auto max-w-6xl px-6 py-16 md:px-8">
+      <section id="pricing" className="mx-auto max-w-6xl px-6 py-16 md:px-8" aria-label="Session pricing and packages">
         <h2 className="text-3xl font-bold md:text-4xl text-secondary" >Pricing</h2>
         <p className="mt-2 text-neutral-300">Intro offer available for first‑time clients.</p>
         <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-4 ">
@@ -131,7 +131,7 @@ export default function TheFinalBellLanding() {
       </section>
 
       {/* Coach Bio */}
-      <section className="bg-neutral-900/60">
+      <section className="bg-neutral-900/60" aria-label="Coach biography and qualifications">
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-6 py-16 md:grid-cols-2 md:px-8">
           <div>
             <h2 className="text-3xl font-bold md:text-4xl text-secondary">Meet Your Coach</h2>
@@ -165,7 +165,7 @@ export default function TheFinalBellLanding() {
       </section>
 
       {/* Testimonials */}
-      <section className="mx-auto max-w-6xl px-6 py-16 md:px-8">
+      <section className="mx-auto max-w-6xl px-6 py-16 md:px-8" aria-label="Client feedback and results">
         <h2 className="text-3xl font-bold md:text-4xl text-secondary">Client Results</h2>
         <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
           {[
@@ -195,7 +195,7 @@ export default function TheFinalBellLanding() {
       </section>
 
       {/* CTA */}
-      <section id="book-cta" className="relative overflow-hidden bg-neutral-900/80">
+      <section id="book-cta" className="relative overflow-hidden bg-neutral-900/80" aria-label="Call to action to book a session">
         <div className="mx-auto flex max-w-6xl flex-col items-start gap-6 px-6 py-16 md:px-8">
           <h3 className="text-3xl font-bold text-secondary">Ready to train before the final bell?</h3>
           <p className="max-w-2xl text-neutral-300">
@@ -218,7 +218,7 @@ export default function TheFinalBellLanding() {
       </section>
 
      {/* Booking Section (Pay first → redirect to members booking) */}
-<section id="book" className="mx-auto max-w-6xl px-6 py-16 md:px-8">
+<section id="book" className="mx-auto max-w-6xl px-6 py-16 md:px-8" aria-label="Purchase session packs and booking information">
   <h2 className="text-3xl font-bold md:text-4xl text-secondary">Buy a Pack</h2>
   <p className="mt-2 text-neutral-300">
     Purchase a 5-session pack. After checkout you’ll be automatically redirected to the members booking page
