@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./index.css";
-import { InlineWidget } from "react-calendly";
 import { Dumbbell, ShieldCheck, Clock, Sparkles, CheckCircle, Instagram, Phone, Mail, MapPin, ChevronRight } from "lucide-react";
 import imgUrl from './assets/meet-the-coach.jpg';
 import imgurl1 from './assets//boxing.jpg';
