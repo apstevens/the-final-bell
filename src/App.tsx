@@ -71,6 +71,7 @@ export default function TheFinalBellLanding() {
 
       {/* Trust / Value props */}
       <section className="mx-auto grid max-w-6xl grid-cols-1 gap-6 px-6 py-12 md:grid-cols-3 md:px-8" aria-label="Key training principles">
+        <h2 id="principles-heading" className="sr-only">Key training principles</h2>
         <ValueCard icon={<ShieldCheck />} title="Safe & Technical" desc="Proper boxing/Muay Thai fundamentals with injury‑aware coaching." />
         <ValueCard icon={<Dumbbell />} title="Strength & Conditioning" desc="Programming that improves power, stamina, and mobility." />
         <ValueCard icon={<Clock />} title="Saturday‑Only Focus" desc="Peak‑efficiency sessions designed for busy schedules." />
