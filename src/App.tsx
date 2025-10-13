@@ -234,7 +234,7 @@ export default function TheFinalBellLanding() {
       <a
         href="https://buy.stripe.com/28EaEX0fD1o5aCv6ql8IU02"
         target="_blank" rel="noreferrer"
-        className="mt-5 block rounded-2xl px-4 py-3 text-center font-semibold shadow-lg bg-secondary text-neutral-950 hover:bg-primary-dark"
+        className="mt-5 block rounded-2xl px-4 py-3 text-center font-semibold shadow-lg bg-secondary text-neutral-950 hover:bg-primary-dark hover:text-amber-50"
       >
         Buy 5 × 30-Minute Sessions
       </a>
@@ -247,7 +247,7 @@ export default function TheFinalBellLanding() {
       <a
         href="https://buy.stripe.com/3cI8wPfax5El25ZaGB8IU01"
         target="_blank" rel="noreferrer"
-        className="mt-5 block rounded-2xl px-4 py-3 text-center font-semibold shadow-lg bg-secondary text-neutral-950 hover:bg-primary-dark"
+        className="mt-5 block rounded-2xl px-4 py-3 text-center font-semibold shadow-lg bg-secondary text-neutral-950 hover:bg-primary-dark hover:text-amber-50"
       >
         Buy 5 × 60-Minute Sessions
       </a>
