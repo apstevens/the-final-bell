@@ -258,7 +258,7 @@ export default function TheFinalBellLanding() {
       <p className="mt-2 text-neutral-300">Partner drills, high energy, shared cost.</p>
       <p className="mt-3 text-3xl font-extrabold">£250</p>
       <a
-        href="https://buy.stripe.com/dRm8wP8M90k1dOH2a58IU00"
+        href="https://buy.stripe.com/eVq14n6E1feV3a3aGB8IU03"
         target="_blank" rel="noreferrer"
         className="mt-5 block rounded-2xl px-4 py-3 text-center font-semibold ring-2 ring-neutral-700 hover:bg-secondary hover:text-neutral-900"
       >
