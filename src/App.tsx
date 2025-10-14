@@ -118,7 +118,7 @@ export default function TheFinalBellLanding() {
           <PriceCard
             highlight
             label="Small Group (2–4)"
-            price="£500"
+            price="£250"
             subtitle="for 5 sessions (over 5 weeks)"
             bullets={["Shared cost, same intensity", "Partner drills", "Great for friends/couples"]}
           />
@@ -256,7 +256,7 @@ export default function TheFinalBellLanding() {
     <div className="rounded-2xl bg-neutral-900/60 p-6 ring-1 ring-secondary">
       <h3 className="text-xl font-semibold text-secondary">5 × Small Group (2–4)</h3>
       <p className="mt-2 text-neutral-300">Partner drills, high energy, shared cost.</p>
-      <p className="mt-3 text-3xl font-extrabold">£500</p>
+      <p className="mt-3 text-3xl font-extrabold">£250</p>
       <a
         href="https://buy.stripe.com/dRm8wP8M90k1dOH2a58IU00"
         target="_blank" rel="noreferrer"
