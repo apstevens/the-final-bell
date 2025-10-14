@@ -106,20 +106,20 @@ export default function TheFinalBellLanding() {
           <PriceCard
             label="60 Minute 1:1 Session"
             price="£200"
-            subtitle="per 5 weeks"
+            subtitle="for 5 sessions (over 5 weeks)"
             bullets={["Technique focus", "Strength & conditioning", "Progress tracking"]}
           />
           <PriceCard
             label="30 Minute 1:1 Session"
             price="£100"
-            subtitle="per 5 weeks"
+            subtitle="for 5 sessions (over 5 weeks)"
             bullets={["Technique focus", "Strength & conditioning", "Progress tracking"]}
           />
           <PriceCard
             highlight
             label="Small Group (2–4)"
             price="£500"
-            subtitle="per 5 weeks"
+            subtitle="for 5 sessions (over 5 weeks)"
             bullets={["Shared cost, same intensity", "Partner drills", "Great for friends/couples"]}
           />
           <PriceCard
