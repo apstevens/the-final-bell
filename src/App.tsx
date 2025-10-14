@@ -268,8 +268,7 @@ export default function TheFinalBellLanding() {
   </div>
 
   <p className="mt-4 text-xs text-neutral-400">
-    Payments processed by Stripe. You’ll receive an email receipt. After payment you’ll be redirected to
-    <code className="mx-1 rounded bg-neutral-800 px-1 py-0.5">/members/book</code> to schedule.
+    Payments processed by Stripe. You’ll receive an email receipt. After payment you’ll be redirected to the members area to schedule your sessions.
   </p>
 </section>
 
