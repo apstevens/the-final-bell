@@ -281,7 +281,7 @@ export default function TheFinalBellLanding() {
             <p className="mt-2 text-neutral-300">Boxing Fitness & Muay Thai Training — Chelmsford (Saturdays)</p>
           </div>
           <div className="space-y-3">
-            <p className="flex items-center gap-2"><Phone className="h-5 w-5 text-secondary" /><a href="tel:+447485041755"> +44 7485 041755</a></p>
+            <p className="flex items-center gap-2"><Phone className="h-5 w-5 text-secondary hover:underline hover:text-primary" /><a href="tel:+447485041755"> +44 7485 041755</a></p>
             <p className="flex items-center gap-2"><Mail className="h-5 w-5 text-secondary" /> <a href="mailto:hello@finalbell.co.uk">hello@finalbell.co.uk</a></p>
             <p className="flex items-center gap-2"><Instagram className="h-5 w-5 text-secondary" /> <a href="https://instagram.com/finalbell2025">@finalbell2025</a></p>
             <p className="flex items-center gap-2"><MapPin className="h-5 w-5 text-secondary" /> Chelmsford, UK</p>
