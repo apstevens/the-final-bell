@@ -68,55 +68,57 @@ export default function About() {
             </div>
 
             <div>
-            <h2 className="mt-10 text-2xl font-semibold text-secondary">Competition Record</h2>
-            <table className="w-full table-auto overflow-hidden rounded-2xl border-2 border-secondary/40 bg-neutral-950 text-neutral-200 shadow-xl">
-                <caption className="sr-only">Competition record by discipline</caption>
+                <section className="mt-10">
+                    <h2 className="mt-10 text-2xl font-semibold text-secondary">Competition Record</h2>
+                    <table className="w-full table-auto overflow-hidden rounded-2xl border-2 border-secondary/40 bg-neutral-950 text-neutral-200 shadow-xl">
+                        <caption className="sr-only">Competition record by discipline</caption>
 
-                {/* Header row */}
-                <thead className="bg-primary/20">
-                    <tr className="text-left text-sm uppercase tracking-wide">
-                    <th className="px-4 py-3 font-semibold text-secondary">Discipline</th>
-                    <th className="px-4 py-3 font-semibold">Fights</th>
-                    <th className="px-4 py-3 font-semibold">Wins</th>
-                    <th className="px-4 py-3 font-semibold">Losses</th>
-                    <th className="px-4 py-3 font-semibold">KOs</th>
-                    </tr>
-                </thead>
+                        {/* Header row */}
+                        <thead className="bg-primary/20">
+                            <tr className="text-left text-sm uppercase tracking-wide">
+                            <th className="px-4 py-3 font-semibold text-secondary">Discipline</th>
+                            <th className="px-4 py-3 font-semibold">Fights</th>
+                            <th className="px-4 py-3 font-semibold">Wins</th>
+                            <th className="px-4 py-3 font-semibold">Losses</th>
+                            <th className="px-4 py-3 font-semibold">KOs</th>
+                            </tr>
+                        </thead>
 
-                <tbody className="divide-y divide-neutral-800/70">
-                    <tr className="hover:bg-neutral-900/60 transition-colors">
-                    <td className="px-4 py-3 font-medium">Boxing</td>
-                    <td className="px-4 py-3">8</td>
-                    <td className="px-4 py-3 text-green-400">6</td>
-                    <td className="px-4 py-3 text-red-400">2</td>
-                    <td className="px-4 py-3 text-secondary">2</td>
-                    </tr>
-                    <tr className="hover:bg-neutral-900/60 transition-colors">
-                    <td className="px-4 py-3 font-medium">K1</td>
-                    <td className="px-4 py-3">4</td>
-                    <td className="px-4 py-3 text-green-400">4</td>
-                    <td className="px-4 py-3 text-red-400/70">0</td>
-                    <td className="px-4 py-3 text-secondary/80">0</td>
-                    </tr>
-                    <tr className="hover:bg-neutral-900/60 transition-colors">
-                    <td className="px-4 py-3 font-medium">Muay Thai</td>
-                    <td className="px-4 py-3">2</td>
-                    <td className="px-4 py-3 text-green-400/70">0</td>
-                    <td className="px-4 py-3 text-red-400">2</td>
-                    <td className="px-4 py-3 text-secondary/80">0</td>
-                    </tr>
-                </tbody>
+                        <tbody className="divide-y divide-neutral-800/70">
+                            <tr className="hover:bg-neutral-900/60 transition-colors">
+                            <td className="px-4 py-3 font-medium">Boxing</td>
+                            <td className="px-4 py-3">8</td>
+                            <td className="px-4 py-3 text-green-400">6</td>
+                            <td className="px-4 py-3 text-red-400">2</td>
+                            <td className="px-4 py-3 text-secondary">2</td>
+                            </tr>
+                            <tr className="hover:bg-neutral-900/60 transition-colors">
+                            <td className="px-4 py-3 font-medium">K1</td>
+                            <td className="px-4 py-3">4</td>
+                            <td className="px-4 py-3 text-green-400">4</td>
+                            <td className="px-4 py-3 text-red-400/70">0</td>
+                            <td className="px-4 py-3 text-secondary/80">0</td>
+                            </tr>
+                            <tr className="hover:bg-neutral-900/60 transition-colors">
+                            <td className="px-4 py-3 font-medium">Muay Thai</td>
+                            <td className="px-4 py-3">2</td>
+                            <td className="px-4 py-3 text-green-400/70">0</td>
+                            <td className="px-4 py-3 text-red-400">2</td>
+                            <td className="px-4 py-3 text-secondary/80">0</td>
+                            </tr>
+                        </tbody>
 
-                {/* Bottom accent bar */}
-                <tfoot>
-                    <tr>
-                    <td colSpan={5} className="h-1 bg-gradient-to-r from-secondary via-secondary/60 to-secondary/0"></td>
-                    </tr>
-                </tfoot>
-                </table>
-            <p className="mt-2 text-neutral-400 italic">
-                Every bout, win or lose, has been a lesson — shaping the fighter, coach, and mindset behind The Final Bell.
-            </p>
+                        {/* Bottom accent bar */}
+                        <tfoot>
+                            <tr>
+                            <td colSpan={5} className="h-1 bg-gradient-to-r from-secondary via-secondary/60 to-secondary/0"></td>
+                            </tr>
+                        </tfoot>
+                        </table>
+                    <p className="mt-2 text-neutral-400 italic">
+                        Every bout, win or lose, has been a lesson — shaping the fighter, coach, and mindset behind The Final Bell.
+                    </p>
+                </section>
             </div>
 
             <div>
