@@ -153,6 +153,14 @@ export default function TheFinalBellLanding() {
                 </li>
               ))}
             </ul>
+            <div className="mt-4 flex flex-wrap gap-3">
+              <a
+              href="/about"
+              className="rounded-2xl px-5 py-3 text-base font-semibold shadow-lg ring-2 bg-secondary text-neutral-900 hover:opacity-95 hover:bg-primary-dark hover:text-amber-50"
+              >
+                Book a Session
+              </a>
+            </div>
           </div>
           <div className="relative">
             <img

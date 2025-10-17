@@ -5,11 +5,13 @@ import App from './App.tsx'
 import MembersBook from './pages/MembersBook.tsx';
 import PrivacyPolicy from './pages/PrivacyPolicy.tsx';
 import TermsOfService from './pages/TermsOfService.tsx';
+import About from './pages/About.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
+      <Route path="/about" element={<About />} />
       <Route path="/members/book" element={<MembersBook />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/terms-of-service" element={<TermsOfService />} />
