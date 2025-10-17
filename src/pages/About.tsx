@@ -1,5 +1,5 @@
 // About.tsx
-
+import imgUrl from '../assets/victory_vintage.webp';
 
 export default function About() {
   return (
@@ -9,7 +9,7 @@ export default function About() {
         Saturday availability: <strong>08:00–10:00</strong> and <strong>11:00–15:00</strong>.
       </p>
       <div className="mt-6 overflow-hidden rounded-2xl ring-1 ring-neutral-800">
-        <img src="/andy-coach.jpg" alt="Andy, your boxing and Muay Thai fitness coach" className="w-full"/>
+        <img src={imgUrl} alt="Andy, your boxing and Muay Thai fitness coach" className="w-full"/>
       </div>
     </main>
   );
