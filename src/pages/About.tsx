@@ -69,7 +69,7 @@ export default function About() {
 
             <div>
                 <section className="mt-10">
-                    <h2 className="mt-10 text-2xl font-semibold text-secondary">Competition Record</h2>
+                    <h2 className="text-2xl font-semibold text-secondary mb-4">Competition Record</h2>
                     <table className="w-full table-auto overflow-hidden rounded-2xl border-2 border-secondary/40 bg-neutral-950 text-neutral-200 shadow-xl">
                         <caption className="sr-only">Competition record by discipline</caption>
 
