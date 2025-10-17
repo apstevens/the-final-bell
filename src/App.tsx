@@ -42,7 +42,7 @@ export default function TheFinalBellLanding() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
           <div className="relative mx-auto flex max-w-6xl flex-col items-start gap-6 px-6 py-12 md:px-8 md:py-4">
             <span className="text-sm font-semibold tracking-wider text-secondary">
-            Every Saturday — Chelmsford
+            Every Saturday — Chelmsford/Witham
             </span>
             <h1 className="text-3xl font-extrabold leading-tight sm:text-4xl md:text-4xl">
               <img src={imgurl2} alt="The Final Bell Logo" className="inline-block w-3xs" />
@@ -286,7 +286,7 @@ export default function TheFinalBellLanding() {
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-6 py-12 md:grid-cols-3 md:px-8">
           <div>
             <h4 className="text-xl font-bold text-secondary" style={{ color: gold }}>The Final Bell</h4>
-            <p className="mt-2 text-neutral-300">Boxing Fitness & Muay Thai Training — Chelmsford (Saturdays)</p>
+            <p className="mt-2 text-neutral-300">Boxing Fitness & Muay Thai Training — Chelmsford/Witham (Saturdays)</p>
           </div>
           <div className="space-y-3">
             <p className="flex items-center gap-2"><Phone className="h-5 w-5 text-secondary" /><a href="tel:+447485041755"> +44 7485 041755</a></p>

@@ -1,5 +1,6 @@
 // About.tsx
 
+import { Bell } from 'lucide-react';
 import imgUrl from '../assets/victory_vintage.webp';
 
 export default function About() {
@@ -130,6 +131,12 @@ export default function About() {
             </p>
             </div>
         </section>
+      </div>
+      <div className="w-full flex flex-col items-center group transition-colors">
+        <a href="/" className="flex flex-col items-center">
+          <Bell className="h-8 w-8 text-secondary mt-8 mb-2 transition-colors group-hover:text-primary" />
+          <p className="text-neutral-400 transition-colors group-hover:text-primary">Return to Home</p>
+        </a>
       </div>
     </main>
   );

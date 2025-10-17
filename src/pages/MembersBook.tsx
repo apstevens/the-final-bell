@@ -1,4 +1,5 @@
 // MembersBook.tsx
+import { Bell } from "lucide-react";
 import { InlineWidget } from "react-calendly";
 
 export default function MembersBook() {
@@ -14,6 +15,12 @@ export default function MembersBook() {
           url="https://calendly.com/thefinalbell/60-minute-pt"
           styles={{ height: 720 }}
         />
+      </div>
+      <div className="w-full flex flex-col items-center group transition-colors">
+        <a href="/" className="flex flex-col items-center">
+          <Bell className="h-8 w-8 text-secondary mt-8 mb-2 transition-colors group-hover:text-primary" />
+          <p className="text-neutral-400 transition-colors group-hover:text-primary">Return to Home</p>
+        </a>
       </div>
     </main>
   );
