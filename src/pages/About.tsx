@@ -120,8 +120,8 @@ export default function About() {
                   <td className="px-4 py-3 font-medium text-secondary">
                     Muay Thai
                   </td>
-                  <td className="px-4 py-3">2</td>
-                  <td className="px-4 py-3 text-green-400/70">0</td>
+                  <td className="px-4 py-3">3</td>
+                  <td className="px-4 py-3 text-green-400/70">1</td>
                   <td className="px-4 py-3 text-red-400">2</td>
                   <td className="px-4 py-3 text-secondary/80">0</td>
                 </tr>
