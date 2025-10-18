@@ -1,13 +1,25 @@
 // MembersBook.tsx
 import { Bell } from "lucide-react";
 import { InlineWidget } from "react-calendly";
+import imgurl2 from "../assets/finalBellLogo.png";
 
 export default function MembersBook() {
   return (
-    <main className="min-h-screen bg-neutral-950 text-neutral-100 px-6 py-12 md:px-8">
-      <h1 className="text-3xl font-bold text-secondary">Members: Book Your Sessions</h1>
+    <main className="flex flex-col min-h-screen bg-neutral-950 text-neutral-100 px-6 py-12 md:px-8">
+      <div className="mb-8 flex flex-col items-center">
+        <img
+          src={imgurl2}
+          alt="The Final Bell Logo"
+          className="inline-block w-md"
+        />
+        <h1 className="text-3xl font-bold text-secondary">
+          Members: Book Your Sessions
+        </h1>
+      </div>
+
       <p className="mt-2 text-neutral-300">
-        Saturday availability: <strong>08:00–10:00</strong> and <strong>11:00–15:00</strong>.
+        Saturday availability: <strong>08:00–10:00</strong> and{" "}
+        <strong>11:00–15:00</strong>.
       </p>
       <div className="mt-6 overflow-hidden rounded-2xl ring-1 ring-neutral-800">
         <InlineWidget
@@ -19,7 +31,9 @@ export default function MembersBook() {
       <div className="w-full flex flex-col items-center group transition-colors">
         <a href="/" className="flex flex-col items-center">
           <Bell className="h-8 w-8 text-secondary mt-8 mb-2 transition-colors group-hover:text-primary" />
-          <p className="text-neutral-400 transition-colors group-hover:text-primary">Return to Home</p>
+          <p className="text-neutral-400 transition-colors group-hover:text-primary">
+            Return to Home
+          </p>
         </a>
       </div>
     </main>

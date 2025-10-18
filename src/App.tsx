@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import imgUrl from "./assets/meet-the-coach.webp";
 import imgurl1 from "./assets//boxing.webp";
-import imgurl2 from "./assets/finalBellLogoHorizontal.png";
+import imgurl2 from "./assets/finalBellLogo.png";
 
 // Brand colours
 const gold = "#FFD700";
@@ -59,7 +59,7 @@ export default function TheFinalBellLanding() {
             <img
               src={imgurl2}
               alt="The Final Bell Logo"
-              className="inline-block w-3xs"
+              className="inline-block w-md"
             />
             <span className="block mt-2 text-secondary">
               {" "}
