@@ -6,7 +6,7 @@ import NavBar from "./NavBar";
 
 export default function MembersBook() {
   return (
-    <main className="flex flex-col min-h-screen bg-neutral-950 text-neutral-100 px-6 py-12 md:px-8">
+    <div className="min-h-screen w-full bg-neutral-950 text-neutral-100">
       <div className="mb-8 flex flex-col items-center">
         <NavBar logoSrc={imgurl2} />
         <h1 className="mt-8 text-3xl font-bold text-secondary">
@@ -72,6 +72,6 @@ export default function MembersBook() {
           .
         </div>
       </footer>
-    </main>
+    </div>
   );
 }
