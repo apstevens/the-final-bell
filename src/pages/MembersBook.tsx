@@ -1,18 +1,15 @@
 // MembersBook.tsx
-import { Bell, FileText } from "lucide-react";
+import { FileText } from "lucide-react";
 import { InlineWidget } from "react-calendly";
 import imgurl2 from "../assets/finalBellLogo.png";
+import NavBar from "./NavBar";
 
 export default function MembersBook() {
   return (
     <main className="flex flex-col min-h-screen bg-neutral-950 text-neutral-100 px-6 py-12 md:px-8">
       <div className="mb-8 flex flex-col items-center">
-        <img
-          src={imgurl2}
-          alt="The Final Bell Logo"
-          className="inline-block w-md"
-        />
-        <h1 className="text-3xl font-bold text-secondary">
+        <NavBar logoSrc={imgurl2} />
+        <h1 className="mt-8 text-3xl font-bold text-secondary">
           Members: Book Your Sessions and complete your Client Health Form.
         </h1>
       </div>
@@ -61,15 +58,20 @@ export default function MembersBook() {
           *Training cannot commence until the completed form has been received.*
         </p>
       </div>
-
-      <div className="w-full flex flex-col items-center group transition-colors">
-        <a href="/" className="flex flex-col items-center">
-          <Bell className="h-8 w-8 text-secondary mt-8 mb-2 transition-colors group-hover:text-primary" />
-          <p className="text-neutral-400 transition-colors group-hover:text-primary">
-            Return to Home
-          </p>
-        </a>
-      </div>
+      <footer className="mx-auto max-w-6xl px-6 py-4 text-center text-sm text-neutral-500 md:px-8">
+        <div className="border-t border-neutral-800 py-6 text-center text-sm text-neutral-500">
+          <p>&copy; 2025 The Final Bell Ltd. All rights reserved.</p>
+          <p>Registered in England &amp; Wales · Company No. 16790962</p>
+          <a href="/privacy-policy" className="ml-2 hover:underline">
+            Privacy Policy
+          </a>
+          .
+          <a href="/terms-of-service" className="ml-2 hover:underline">
+            Terms of Service
+          </a>
+          .
+        </div>
+      </footer>
     </main>
   );
 }

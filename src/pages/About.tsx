@@ -1,13 +1,15 @@
 // About.tsx
 
-import { Bell } from "lucide-react";
 import imgUrl from "../assets/victory_vintage.webp";
+import imgUrl1 from "../assets/finalBellLogo.png";
+import NavBar from "./NavBar";
 
 export default function About() {
   return (
     <main className="min-h-screen bg-neutral-950 text-neutral-100 px-6 py-12 flex flex-col items-center text-center">
+      <NavBar logoSrc={imgUrl1} />
       <div className="w-full max-w-3xl flex flex-col items-center">
-        <h1 className="text-3xl font-bold text-secondary">
+        <h1 className="mt-8 text-3xl font-bold text-secondary">
           Meet Your Coach: Andy
         </h1>
         <p className="mt-2 text-neutral-300">
@@ -142,18 +144,22 @@ export default function About() {
               coach, and mindset behind The Final Bell.
             </p>
           </div>
-
-          {/* Return Home */}
-          <div className="flex flex-col items-center group transition-colors mt-8">
-            <a href="/" className="flex flex-col items-center">
-              <Bell className="h-8 w-8 text-secondary mt-4 mb-2 transition-colors group-hover:text-primary" />
-              <p className="text-neutral-400 transition-colors group-hover:text-primary">
-                Return to Home
-              </p>
-            </a>
-          </div>
         </section>
       </div>
+      <footer className="mx-auto max-w-6xl px-6 py-4 text-center text-sm text-neutral-500 md:px-8">
+        <div className="border-t border-neutral-800 py-6 text-center text-sm text-neutral-500">
+          <p>&copy; 2025 The Final Bell Ltd. All rights reserved.</p>
+          <p>Registered in England &amp; Wales · Company No. 16790962</p>
+          <a href="/privacy-policy" className="ml-2 hover:underline">
+            Privacy Policy
+          </a>
+          .
+          <a href="/terms-of-service" className="ml-2 hover:underline">
+            Terms of Service
+          </a>
+          .
+        </div>
+      </footer>
     </main>
   );
 }
