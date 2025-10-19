@@ -4,6 +4,9 @@ import {
   Sparkles,
   CheckCircle,
   ChevronRight,
+  Shield,
+  Dumbbell,
+  Target,
 } from "lucide-react";
 import NavBar from "./pages/NavBar.tsx";
 import imgUrl from "./assets/meet-the-coach.webp";
@@ -87,6 +90,7 @@ export default function TheFinalBellLanding() {
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           <div className="rounded-2xl border border-secondary/40 p-6 bg-neutral-900/50 hover:bg-neutral-900 transition">
             <h4 className="text-lg font-semibold text-secondary mb-2">
+              <Shield className="inline-block mr-2 h-5 w-5 text-secondary" />
               Safe & Technical
             </h4>
             <p className="text-neutral-300 text-sm">
@@ -97,6 +101,7 @@ export default function TheFinalBellLanding() {
 
           <div className="rounded-2xl border border-secondary/40 p-6 bg-neutral-900/50 hover:bg-neutral-900 transition">
             <h4 className="text-lg font-semibold text-secondary mb-2">
+              <Dumbbell className="inline-block mr-2 h-5 w-5 text-secondary" />
               Strength & Conditioning
             </h4>
             <p className="text-neutral-300 text-sm">
@@ -107,6 +112,7 @@ export default function TheFinalBellLanding() {
 
           <div className="rounded-2xl border border-secondary/40 p-6 bg-neutral-900/50 hover:bg-neutral-900 transition">
             <h4 className="text-lg font-semibold text-secondary mb-2">
+              <Target className="inline-block mr-2 h-5 w-5 text-secondary" />
               Saturday-Only Focus
             </h4>
             <p className="text-neutral-300 text-sm">
