@@ -88,7 +88,7 @@ export default function TheFinalBellLanding() {
 
         {/* Feature Cards */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          <div className="rounded-2xl border border-secondary/40 p-6 bg-neutral-900/50 hover:bg-neutral-900 transition">
+          <div className="rounded-2xl border border-secondary/40 p-6 bg-neutral-900/50 hover:bg-primary-light transition">
             <h4 className="text-lg font-semibold text-secondary mb-2">
               <Shield className="inline-block mr-2 h-5 w-5 text-secondary" />
               Safe & Technical
@@ -99,7 +99,7 @@ export default function TheFinalBellLanding() {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-secondary/40 p-6 bg-neutral-900/50 hover:bg-neutral-900 transition">
+          <div className="rounded-2xl border border-secondary/40 p-6 bg-neutral-900/50 hover:bg-primary-light transition">
             <h4 className="text-lg font-semibold text-secondary mb-2">
               <Dumbbell className="inline-block mr-2 h-5 w-5 text-secondary" />
               Strength & Conditioning
@@ -110,7 +110,7 @@ export default function TheFinalBellLanding() {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-secondary/40 p-6 bg-neutral-900/50 hover:bg-neutral-900 transition">
+          <div className="rounded-2xl border border-secondary/40 p-6 bg-neutral-900/50 hover:bg-primary-light transition">
             <h4 className="text-lg font-semibold text-secondary mb-2">
               <Target className="inline-block mr-2 h-5 w-5 text-secondary" />
               Saturday-Only Focus
@@ -199,7 +199,7 @@ export default function TheFinalBellLanding() {
             <div className="mt-6">
               <a
                 href="/about"
-                className="inline-block rounded-2xl px-6 py-3 text-base font-semibold bg-secondary text-neutral-900 shadow-lg ring-2 ring-secondary hover:bg-secondary/90 hover:text-neutral-950 transition"
+                className="inline-block rounded-2xl px-6 py-3 text-base font-semibold bg-secondary text-neutral-900 shadow-lg ring-2 ring-secondary hover:bg-primary-light/90 hover:text-amber-50 transition"
               >
                 Learn More About Andy
               </a>
@@ -250,9 +250,9 @@ export default function TheFinalBellLanding() {
           ].map((t, i) => (
             <blockquote
               key={i}
-              className="rounded-2xl bg-neutral-900/60 p-6 ring-1 ring-secondary"
+              className="rounded-2xl bg-neutral-900/60 p-6 ring-1 ring-secondary hover:bg-primary-light transition"
             >
-              <Sparkles className="h-6 w-6 bg-ring-neutral-900" />
+              <Sparkles className="h-6 w-6 bg-ring-neutral-900 text-secondary" />
               <p className="mt-3 text-neutral-200">“{t.quote}”</p>
               <footer className="mt-4 text-sm text-neutral-400">
                 — {t.name}
@@ -279,7 +279,7 @@ export default function TheFinalBellLanding() {
           <div className="flex gap-3">
             <a
               href="/book"
-              className="inline-flex items-center gap-2 rounded-2xl px-5 py-3 font-semibold shadow-lg bg-secondary text-neutral-950 hover:bg-primary-dark hover:text-amber-50"
+              className="inline-flex items-center gap-2 rounded-2xl px-5 py-3 font-semibold shadow-lg bg-secondary ring-2 ring-secondary text-neutral-950 hover:bg-primary-light hover:text-amber-50"
             >
               Book Online <ChevronRight className="h-5 w-5" />
             </a>
@@ -342,7 +342,7 @@ export default function TheFinalBellLanding() {
 
 function ServiceCard({ title, points }: { title: string; points: string[] }) {
   return (
-    <div className="rounded-2xl bg-neutral-900/60 p-6 ring-1 ring-secondary">
+    <div className="rounded-2xl bg-neutral-900/60 p-6 ring-1 ring-secondary hover:bg-primary-light transition">
       <h3 className="text-xl font-semibold text-secondary">{title}</h3>
       <ul className="mt-4 space-y-2">
         {points.map((p) => (
