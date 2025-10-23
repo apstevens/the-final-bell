@@ -11,8 +11,15 @@ import {
 import NavBar from "./pages/NavBar.tsx";
 import imgUrl from "./assets/meet-the-coach.webp";
 import imgurl2 from "./assets/finalBellLogo.png";
+import { useMeta } from "./lib/UseMeta.ts";
 
 export default function TheFinalBellLanding() {
+
+  useMeta({
+    title: "The Final Bell | Boxing & Muay Thai Personal Training in Chelmsford",
+    description: "The Final Bell provides professional Boxing & Muay Thai personal training focused on skill, strength, and mindset. Train with us in Chelmsford.",
+    canonical: "https://www.finalbell.co.uk",
+  });
   const [openFAQ, setOpenFAQ] = useState<number | null>(0);
 
   const faqs = [
