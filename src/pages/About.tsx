@@ -3,8 +3,17 @@
 import imgUrl from "../assets/victory_vintage.webp";
 import imgUrl1 from "../assets/finalBellLogo.png";
 import NavBar from "./NavBar";
+import { useMeta } from "../lib/UseMeta";
 
 export default function About() {
+  
+  useMeta({
+    title: "About Andy | The Final Bell",
+    description:
+      "Meet Andy - Boxing & Muay Thai PT. Qualifications, record, and coaching philosophy.",
+    canonical: "https://www.finalbell.co.uk/about",
+  });
+
   return (
     <div className="min-h-screen w-full bg-neutral-950 text-neutral-100">
       <NavBar logoSrc={imgUrl1} />

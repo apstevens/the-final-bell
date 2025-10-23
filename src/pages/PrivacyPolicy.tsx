@@ -1,7 +1,15 @@
 // src/pages/PrivacyPolicy.tsx
 import { Bell } from 'lucide-react';
 import img from '../assets/finalBellLogo.png'
+import { useMeta } from '../lib/UseMeta';
 export default function PrivacyPolicy() {
+
+useMeta({
+    title: "Privacy Policy | The Final Bell",
+    description: "Read The Final Bell's Privacy Policy to understand how we collect, use, and protect your personal data when you visit our website or use our services.",
+    canonical: "https://www.finalbell.co.uk/privacy-policy",
+});
+
   return (
     <div className="min-h-screen w-full bg-neutral-900 text-neutral-100">
         <a className='' href='/'><img src={img} alt="The Final Bell Logo" className="mx-auto my-6 w-md hover:rotate-45"/></a>

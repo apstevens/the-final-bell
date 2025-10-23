@@ -2,8 +2,17 @@ import "../index.css";
 import imgurl from "../assets/finalBellLogo.png";
 import { CheckCircle } from "lucide-react"; // <-- import icon
 import NavBar from "./NavBar";
+import { useMeta } from "../lib/UseMeta";
 
 export default function Pricing() {
+  
+  useMeta({
+    title: "Pricing | The Final Bell",
+    description:
+      "Discover our competitive pricing for one-on-one and small group training sessions at The Final Bell. Achieve your fitness goals with expert coaching tailored to your needs.",
+    canonical: "https://www.finalbell.co.uk/pricing",
+  });
+
   return (
     <div className="min-h-screen w-full bg-neutral-950 text-neutral-100">
       <NavBar logoSrc={imgurl} />

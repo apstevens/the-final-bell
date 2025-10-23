@@ -2,8 +2,16 @@ import "../index.css";
 import imgUrl1 from "../assets/finalBellLogo.png";
 import NavBar from "./NavBar";
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { useMeta } from "../lib/UseMeta";
 
 export default function About() {
+  useMeta({
+    title: "Contact | The Final Bell",
+    description:
+      "Get in touch with The Final Bell for boxing fitness and Muay Thai sessions in Chelmsford and Witham.",
+    canonical: "https://www.finalbell.co.uk/contact",
+  });
+
   return (
     <div className="min-h-screen w-full bg-neutral-950 text-neutral-100">
       <NavBar logoSrc={imgUrl1} />

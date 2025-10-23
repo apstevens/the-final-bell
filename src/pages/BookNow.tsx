@@ -1,8 +1,16 @@
 import "../index.css";
 import imgurl2 from "../assets/finalBellLogo.png";
 import NavBar from "./NavBar";
+import { useMeta } from "../lib/UseMeta";
 
 export default function BookNow() {
+  useMeta({
+    title: "Book Now | The Final Bell",
+    description:
+      "Purchase session packs and book your Muay Thai training sessions with The Final Bell.",
+    canonical: "https://www.finalbell.co.uk/book",
+  });
+
   return (
     <div className="min-h-screen w-full bg-neutral-950 text-neutral-100">
       <NavBar logoSrc={imgurl2} />

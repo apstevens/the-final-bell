@@ -1,7 +1,15 @@
 
 import { Bell } from 'lucide-react';
 import img from '../assets/finalBellLogo.png'
+import { useMeta } from '../lib/UseMeta';
 export default function TermsOfService() {
+
+useMeta({
+    title: 'Terms & Conditions | The Final Bell',
+    description: 'Read the terms and conditions for using The Final Bell personal training services in Chelmsford.',
+    canonical: 'https://www.finalbell.co.uk/terms-of-service',
+});
+
   return (
     <div className="min-h-screen w-full bg-neutral-900 text-neutral-100">
         <a href='/'><img src={img} alt="The Final Bell Logo" className="mx-auto my-6 w-md hover:rotate-45"/></a>
