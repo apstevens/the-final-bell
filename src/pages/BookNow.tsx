@@ -44,7 +44,7 @@ export default function BookNow() {
               href="https://buy.stripe.com/28EaEX0fD1o5aCv6ql8IU02"
               target="_blank"
               rel="noreferrer"
-              className="mt-5 block rounded-2xl px-4 py-3 text-center font-semibold shadow-lg bg-secondary text-neutral-950 hover:bg-primary-dark hover:text-amber-50"
+              className="mt-5 block rounded-2xl px-4 py-3 text-center font-semibold shadow-lg border-2 bg-secondary text-neutral-950 hover:bg-primary-dark hover:text-amber-50 hover:border-secondary"
             >
               Buy 5 × 30-Minute Sessions
             </a>
@@ -62,7 +62,7 @@ export default function BookNow() {
               href="https://buy.stripe.com/3cI8wPfax5El25ZaGB8IU01"
               target="_blank"
               rel="noreferrer"
-              className="mt-5 block rounded-2xl px-4 py-3 text-center font-semibold shadow-lg bg-secondary text-neutral-950 hover:bg-primary-dark hover:text-amber-50"
+              className="mt-5 block rounded-2xl px-4 py-3 text-center font-semibold shadow-lg border-2 bg-secondary text-neutral-950 hover:bg-primary-dark hover:text-amber-50 hover:border-secondary"
             >
               Buy 5 × 60-Minute Sessions
             </a>
@@ -80,7 +80,7 @@ export default function BookNow() {
               href="https://buy.stripe.com/eVq14n6E1feV3a3aGB8IU03"
               target="_blank"
               rel="noreferrer"
-              className="mt-5 block rounded-2xl px-4 py-3 text-center font-semibold ring-2 ring-neutral-700 hover:bg-secondary hover:text-neutral-900"
+              className="mt-5 block rounded-2xl px-4 py-3 text-center font-semibold ring-2 ring-neutral-700 hover:bg-secondary hover:text-neutral-900 hover:ring-primary-dark"
             >
               Buy 5 × Small Group Sessions
             </a>

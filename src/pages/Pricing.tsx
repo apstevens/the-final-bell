@@ -5,7 +5,6 @@ import NavBar from "./NavBar";
 import { useMeta } from "../lib/UseMeta";
 
 export default function Pricing() {
-  
   useMeta({
     title: "Pricing | The Final Bell",
     description:
@@ -108,7 +107,9 @@ function PriceCard({
   return (
     <div
       className={`rounded-2xl p-6 ring-2 ${
-        highlight ? "bg-neutral-900/70" : "bg-neutral-900/60"
+        highlight
+          ? "bg-neutral-900/70 hover:bg-primary-light transition-colors"
+          : "bg-neutral-900/60 hover:bg-primary-light transition-colors"
       } ring-secondary`}
     >
       <h3 className="text-lg font-semibold text-secondary">{label}</h3>
