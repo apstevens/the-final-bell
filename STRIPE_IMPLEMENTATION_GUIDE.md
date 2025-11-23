@@ -21,19 +21,21 @@ This guide walks you through setting up Stripe payments for your Final Bell shop
 
 ## Setup Instructions
 
-### Step 1: Get Your Stripe API Keys
+### Step 1: Get Your Stripe API Keys (Stripe Dashboard)
 
 1. Go to [https://dashboard.stripe.com/register](https://dashboard.stripe.com/register) and create an account
 2. Navigate to **Developers → API Keys**
 3. Copy your **Publishable key** (starts with `pk_test_...`)
 4. Copy your **Secret key** (starts with `sk_test_...`) - Keep this secure!
 
-### Step 2: Configure Environment Variables
+### Step 2: Configure Frontend Environment Variables (Frontend Project)
 
-1. Create a `.env` file in your project root:
+**📁 Location:** Root of your frontend project (`final-bell-marketing/`)
+
+1. Create a `.env` file in your **frontend project root**:
 
 ```bash
-# .env
+# .env (in final-bell-marketing/)
 VITE_STRIPE_PUBLISHABLE_KEY=pk_test_your_publishable_key_here
 VITE_API_URL=http://localhost:3001
 ```
@@ -44,42 +46,63 @@ VITE_API_URL=http://localhost:3001
 echo ".env" >> .gitignore
 ```
 
-### Step 3: Set Up Backend Server
+### Step 3: Set Up Backend Server (New Backend Project)
 
-You need a backend server to securely process Stripe payments. Your frontend cannot use the secret key directly.
+**⚠️ IMPORTANT:** This step creates a **separate backend project**. You need a backend server to securely process Stripe payments because your frontend cannot use the secret key directly.
 
 #### Option A: Node.js/Express (Recommended for Quick Setup)
 
-1. Create a new directory for your backend:
+**📁 Location:** Create a **new directory** separate from your frontend
+
+1. **Create a new directory for your backend** (in a separate location):
 
 ```bash
-mkdir backend
-cd backend
+# Run this in your parent projects directory, NOT inside final-bell-marketing/
+mkdir final-bell-backend
+cd final-bell-backend
 npm init -y
 ```
 
-2. Install dependencies:
+2. **Install backend dependencies** (in the `final-bell-backend/` directory):
 
 ```bash
 npm install express stripe cors dotenv
 ```
 
-3. Copy the [server-example.js](server-example.js) file to your backend directory
-
-4. Create a `.env` file in the backend directory:
+3. **Copy the server code** - Copy the [server-example.js](server-example.js) file from your frontend project to this backend directory:
 
 ```bash
-# backend/.env
+# If server-example.js is in your frontend project root
+cp ../final-bell-marketing/server-example.js ./server.js
+```
+
+4. **Create backend `.env` file** (in the `final-bell-backend/` directory):
+
+```bash
+# .env (in final-bell-backend/)
 STRIPE_SECRET_KEY=sk_test_your_secret_key_here
 STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret_here
 CLIENT_URL=http://localhost:5173
 PORT=3001
 ```
 
-5. Run the backend server:
+5. **Run the backend server** (in the `final-bell-backend/` directory):
 
 ```bash
-node server-example.js
+node server.js
+```
+
+**Your directory structure should look like this:**
+```
+Projects/
+├── final-bell-marketing/          # Frontend React app
+│   ├── src/
+│   ├── .env                       # Frontend env (VITE_* variables)
+│   └── package.json
+└── final-bell-backend/            # Backend Node.js server
+    ├── server.js                  # Your Express server
+    ├── .env                       # Backend env (STRIPE_SECRET_KEY)
+    └── package.json
 ```
 
 #### Option B: Deploy to Serverless Platform
@@ -92,17 +115,18 @@ You can deploy your backend to:
 
 ### Step 4: Test the Payment Flow
 
-1. Start your frontend:
+**You need to run BOTH servers simultaneously:**
+
+1. **Terminal 1 - Start your frontend** (in `final-bell-marketing/`):
 
 ```bash
 npm run dev
 ```
 
-2. Start your backend (if using Node.js/Express):
+2. **Terminal 2 - Start your backend** (in `final-bell-backend/`):
 
 ```bash
-cd backend
-node server-example.js
+node server.js
 ```
 
 3. Navigate to [http://localhost:5173/shop](http://localhost:5173/shop)
@@ -115,27 +139,29 @@ node server-example.js
    - Declined: `4000 0000 0000 9995`
    - Use any future expiry date, any 3-digit CVC, and any 5-digit postal code
 
-### Step 5: Set Up Webhooks (Recommended)
+### Step 5: Set Up Webhooks (Recommended for Production)
+
+**📁 Location:** Run these commands from anywhere, but update the **backend `.env`** file
 
 Webhooks allow you to receive notifications when payments are completed:
 
-1. Install Stripe CLI: [https://stripe.com/docs/stripe-cli](https://stripe.com/docs/stripe-cli)
+1. **Install Stripe CLI**: [https://stripe.com/docs/stripe-cli](https://stripe.com/docs/stripe-cli)
 
-2. Login to Stripe CLI:
+2. **Login to Stripe CLI**:
 
 ```bash
 stripe login
 ```
 
-3. Forward webhooks to your local server:
+3. **Forward webhooks to your local backend server** (Terminal 3):
 
 ```bash
 stripe listen --forward-to localhost:3001/webhook
 ```
 
-4. Copy the webhook signing secret (starts with `whsec_...`) to your backend `.env` file
+4. **Copy the webhook signing secret** (starts with `whsec_...`) to your **backend `.env` file** (in `final-bell-backend/.env`)
 
-5. In production, set up webhooks in the Stripe Dashboard:
+5. **In production**, set up webhooks in the Stripe Dashboard:
    - Go to **Developers → Webhooks**
    - Add endpoint: `https://your-backend.com/webhook`
    - Select events: `checkout.session.completed`

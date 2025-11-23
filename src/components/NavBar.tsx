@@ -19,7 +19,7 @@ export default function NavBar({ logoSrc }: { logoSrc: string }) {
     { label: "Pricing", href: "/pricing" },
     { label: "Book Now!", href: "/book" },
     { label: "Contact Us", href: "/contact" },
-    // { label: "Shop", href: "/shop" }, // TODO: Uncomment when shop is ready for production
+    { label: "Shop", href: "/shop" },
   ];
 
   return (

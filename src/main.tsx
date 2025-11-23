@@ -18,10 +18,12 @@ import Cancel from "./pages/Cancel";
 
 // Import Cart Provider
 import { CartProvider } from "./contexts/CartContext";
+import { ProductProvider } from "./contexts/ProductContext";
 
 createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
-    <CartProvider>
+    <ProductProvider>
+      <CartProvider>
       <Routes>
         {/* Marketing Pages */}
         <Route path="/" element={<Home />} />
@@ -62,6 +64,7 @@ createRoot(document.getElementById("root")!).render(
         }
       />
     </Routes>
-    </CartProvider>
+      </CartProvider>
+    </ProductProvider>
   </BrowserRouter>
 );

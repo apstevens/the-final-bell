@@ -4,13 +4,15 @@ import { Search, ChevronRight } from "lucide-react";
 import NavBar from "../components/NavBar";
 import Cart from "../components/Cart";
 import finalBellLogo from "../assets/finalBellLogo.png";
-import { products, categories } from "../data/products";
+import { categories } from "../data/products";
+import { useProducts } from "../contexts/ProductContext";
 
 type SortOption = "featured" | "price-low" | "price-high" | "name" | "newest";
 
 export default function CategoryListing() {
   const { categoryId } = useParams<{ categoryId: string }>();
   const navigate = useNavigate();
+  const { products } = useProducts();
   const [searchQuery, setSearchQuery] = useState("");
   const [sortBy, setSortBy] = useState<SortOption>("featured");
 
@@ -18,7 +20,12 @@ export default function CategoryListing() {
 
   // Filter and sort products
   const filteredProducts = useMemo(() => {
-    let filtered = products.filter((product) => product.category === categoryId);
+    console.log("[CategoryListing] Filtering for categoryId:", categoryId);
+    console.log("[CategoryListing] Total products:", products.length);
+    let filtered = products.filter(
+      (product) => product.category === categoryId
+    );
+    console.log("[CategoryListing] Filtered products:", filtered.length);
 
     // Filter by search query
     if (searchQuery.length >= 2) {
@@ -35,10 +42,14 @@ export default function CategoryListing() {
     const sorted = [...filtered];
     switch (sortBy) {
       case "price-low":
-        sorted.sort((a, b) => (a.specialPrice || a.price) - (b.specialPrice || b.price));
+        sorted.sort(
+          (a, b) => (a.specialPrice || a.price) - (b.specialPrice || b.price)
+        );
         break;
       case "price-high":
-        sorted.sort((a, b) => (b.specialPrice || b.price) - (a.specialPrice || a.price));
+        sorted.sort(
+          (a, b) => (b.specialPrice || b.price) - (a.specialPrice || a.price)
+        );
         break;
       case "name":
         sorted.sort((a, b) => a.name.localeCompare(b.name));
@@ -60,7 +71,7 @@ export default function CategoryListing() {
     }
 
     return sorted;
-  }, [categoryId, searchQuery, sortBy]);
+  }, [products, categoryId, searchQuery, sortBy]);
 
   if (!category) {
     navigate("/shop");
@@ -83,7 +94,9 @@ export default function CategoryListing() {
             Shop
           </a>
           <ChevronRight className="h-4 w-4" />
-          <span className="text-secondary capitalize font-medium">{category.name}</span>
+          <span className="text-secondary capitalize font-medium">
+            {category.name}
+          </span>
         </nav>
       </section>
 
@@ -91,7 +104,9 @@ export default function CategoryListing() {
       <section className="mx-auto max-w-6xl px-6 py-12 md:px-8">
         <div className="text-center space-y-4">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-            <span className="block text-secondary capitalize">{category.name}</span>
+            <span className="block text-secondary capitalize">
+              {category.name}
+            </span>
           </h1>
           <p className="max-w-2xl mx-auto text-lg text-neutral-300">
             {category.description}
@@ -126,7 +141,10 @@ export default function CategoryListing() {
         {/* Sort & Results Count */}
         <div className="mb-8 flex items-center justify-between flex-wrap gap-3">
           <p className="text-sm text-neutral-400">
-            Showing <span className="font-semibold text-neutral-100">{filteredProducts.length}</span>{" "}
+            Showing{" "}
+            <span className="font-semibold text-neutral-100">
+              {filteredProducts.length}
+            </span>{" "}
             {filteredProducts.length === 1 ? "product" : "products"}
           </p>
           <div className="flex items-center gap-3">
@@ -200,7 +218,9 @@ export default function CategoryListing() {
                     {product.category}
                   </span>
                   {product.brand && (
-                    <span className="text-xs text-neutral-500">{product.brand}</span>
+                    <span className="text-xs text-neutral-500">
+                      {product.brand}
+                    </span>
                   )}
                 </div>
 
@@ -219,7 +239,9 @@ export default function CategoryListing() {
                       {product.sizes.length} sizes available
                     </span>
                     <span className="text-xs text-neutral-500">
-                      {product.category === "Boxing Gloves" ? "Click to select weight" : "Click to select size"}
+                      {product.category === "gloves"
+                        ? "Click to select weight"
+                        : "Click to select size"}
                     </span>
                   </div>
                 )}
@@ -227,13 +249,15 @@ export default function CategoryListing() {
                 {/* Stock Level */}
                 {product.stockQuantity !== undefined && product.inStock && (
                   <div className="mb-3">
-                    <span className={`text-xs font-medium ${
-                      product.stockQuantity > 10
-                        ? "text-green-500"
-                        : product.stockQuantity > 5
-                        ? "text-yellow-500"
-                        : "text-orange-500"
-                    }`}>
+                    <span
+                      className={`text-xs font-medium ${
+                        product.stockQuantity > 10
+                          ? "text-green-500"
+                          : product.stockQuantity > 5
+                          ? "text-yellow-500"
+                          : "text-orange-500"
+                      }`}
+                    >
                       {product.stockQuantity > 10
                         ? "In Stock"
                         : product.stockQuantity > 5

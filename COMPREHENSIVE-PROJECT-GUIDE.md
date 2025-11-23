@@ -54,7 +54,7 @@ The Final Bell is a complete e-commerce and booking platform for a martial arts 
 ### Business Model
 
 - **Training Services:** 1-on-1, group classes, online coaching
-- **E-commerce Shop:** Martial arts equipment (632+ products from Playwell)
+- **E-commerce Shop:** Martial arts equipment (synced from muaythai-boxing.com)
 - **Customer Management:** Bookings, orders, user profiles
 
 ---
@@ -395,7 +395,7 @@ function extractBrand(title) {
 
   // Check if first word is generic
   if (notBrands.includes(firstWord.toLowerCase())) {
-    return "Playwell";
+    return "muaythai-boxing.com";
   }
 
   // If first word looks like a brand (capitalized, reasonable length)
@@ -406,10 +406,10 @@ function extractBrand(title) {
     return firstWord;
   }
 
-  return "Playwell";
+  return "muaythai-boxing.com";
 }
 
-// Category Mapping - Map Playwell categories to our categories
+// Category Mapping - Map muaythai-boxing.com categories to our categories
 function mapCategory(playwellCategory) {
   const categoryMap = {
     "Boxing Gloves": "gloves",
@@ -499,7 +499,7 @@ function convertToOurFormat(products) {
 async function main() {
   try {
     // Read CSV
-    const csvPath = path.join(process.cwd(), "playwell-products.csv");
+    const csvPath = path.join(process.cwd(), "mtb-product-export.csv");
     const csvContent = await fs.readFile(csvPath, "utf-8");
 
     // Parse and convert
@@ -512,7 +512,7 @@ async function main() {
       "src/data/products-generated.ts"
     );
 
-    const tsContent = `// Auto-generated from playwell-products.csv
+    const tsContent = `// Auto-generated from mtb-product-export.csv
 // Last updated: ${new Date().toISOString()}
 
 export interface Product {
@@ -1148,15 +1148,15 @@ const styles = StyleSheet.create({
 
 **Flow:**
 ```
-Playwell CSV → Parse CSV → Extract Brands → Map Categories
+muaythai-boxing.com CSV → Parse CSV → Extract Brands → Map Categories
 → Detect Sizes → Assign Badges → Generate TypeScript
 → Import to Frontend
 ```
 
 **Commands:**
 ```bash
-# Download CSV from Playwell
-curl -o playwell-products.csv ftp://161.35.45.163/ --max-time 10
+# Download CSV from muaythai-boxing.com
+curl -o mtb-product-export.csv ftp://161.35.45.163/ --max-time 10
 
 # Run import
 node scripts/importProducts.mjs
@@ -1698,20 +1698,20 @@ const CartProvider = ({ children }) => {
 
 **Symptom:**
 ```
-Error: ENOENT: no such file or directory, open 'playwell-products.csv'
+Error: ENOENT: no such file or directory, open 'mtb-product-export.csv'
 ```
 
 **Solution:**
 ```bash
 # 1. Check file exists
-ls playwell-products.csv
+ls mtb-product-export.csv
 
 # 2. Check you're in correct directory
 pwd
 # Should be: .../final-bell-marketing
 
 # 3. Re-download CSV
-curl -o playwell-products.csv ftp://161.35.45.163/ --max-time 10
+curl -o mtb-product-export.csv ftp://161.35.45.163/ --max-time 10
 
 # 4. Run import
 node scripts/importProducts.mjs

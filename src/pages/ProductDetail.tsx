@@ -1,34 +1,77 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { ChevronRight, ShoppingCart, Heart, Share2, Truck, Shield, RotateCcw } from "lucide-react";
+import {
+  ChevronRight,
+  ShoppingCart,
+  Heart,
+  Share2,
+  Truck,
+  Shield,
+  RotateCcw,
+} from "lucide-react";
 import NavBar from "../components/NavBar";
 import Cart from "../components/Cart";
 import finalBellLogo from "../assets/finalBellLogo.png";
-import { useCart, type GloveSize, type ClothingSize, type ShinguardSize, type HandWrapSize, type MMAGloveSize } from "../contexts/CartContext";
-
-// This will be replaced with API data
-import { products } from "../data/products";
+import {
+  useCart,
+  type GloveSize,
+  type ClothingSize,
+  type ShinguardSize,
+  type HandWrapSize,
+  type MMAGloveSize,
+} from "../contexts/CartContext";
+import { useProducts } from "../contexts/ProductContext";
 
 export default function ProductDetail() {
   const { productId } = useParams<{ productId: string }>();
   const navigate = useNavigate();
   const { addToCart } = useCart();
+  const { products, loading } = useProducts();
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
   const [addedToCart, setAddedToCart] = useState(false);
-  const [selectedSize, setSelectedSize] = useState<GloveSize | ClothingSize | ShinguardSize | HandWrapSize | MMAGloveSize | undefined>(undefined);
+  const [selectedSize, setSelectedSize] = useState<
+    | GloveSize
+    | ClothingSize
+    | ShinguardSize
+    | HandWrapSize
+    | MMAGloveSize
+    | undefined
+  >(undefined);
 
   const product = products.find((p) => p.id === Number(productId));
 
   useEffect(() => {
-    if (!product) {
+    // Only redirect if products have finished loading and product is not found
+    if (!loading && !product) {
       navigate("/shop");
     }
-    // Set default size if product has sizes
+    // Set default size to first IN STOCK size if product has sizes
     if (product?.hasSizes && product.sizes && product.sizes.length > 0) {
-      setSelectedSize(product.sizes[0] as GloveSize | ClothingSize | ShinguardSize | HandWrapSize | MMAGloveSize);
+      const firstInStockSize =
+        product.variants?.find((v) => v.inStock)?.size || product.sizes[0];
+      setSelectedSize(
+        firstInStockSize as
+          | GloveSize
+          | ClothingSize
+          | ShinguardSize
+          | HandWrapSize
+          | MMAGloveSize
+      );
     }
-  }, [product, navigate]);
+  }, [product, loading, navigate]);
+
+  // Show loading state while products are loading
+  if (loading) {
+    return (
+      <div className="min-h-screen w-full bg-neutral-950 text-neutral-100">
+        <NavBar logoSrc={finalBellLogo} />
+        <div className="flex items-center justify-center py-24">
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-secondary border-t-transparent"></div>
+        </div>
+      </div>
+    );
+  }
 
   if (!product) {
     return null;
@@ -41,6 +84,24 @@ export default function ProductDetail() {
       return;
     }
 
+    // Check if selected size is in stock
+    if (product.hasSizes && product.variants) {
+      const selectedVariant = product.variants.find(
+        (v) => v.size === selectedSize
+      );
+      if (!selectedVariant?.inStock || selectedVariant.inventoryQty === 0) {
+        alert("This size is currently out of stock");
+        return;
+      }
+      // Check if requested quantity exceeds available stock
+      if (selectedVariant.inventoryQty < quantity) {
+        alert(
+          `Only ${selectedVariant.inventoryQty} items available in this size`
+        );
+        return;
+      }
+    }
+
     for (let i = 0; i < quantity; i++) {
       addToCart(product, selectedSize);
     }
@@ -49,7 +110,9 @@ export default function ProductDetail() {
   };
 
   const relatedProducts = products
-    .filter((p) => p.category === product.category && p.id !== product.id)
+    .filter(
+      (p) => p.category === product.category && p.id !== product.id && p.inStock
+    )
     .slice(0, 3);
 
   return (
@@ -200,29 +263,75 @@ export default function ProductDetail() {
             {product.hasSizes && product.sizes && product.sizes.length > 0 && (
               <div className="space-y-3 border-2 border-secondary/30 p-4 rounded-xl">
                 <label className="text-base font-semibold text-neutral-100 block">
-                  Select Size {product.category === "Boxing Gloves" ? "(Weight)" : ""}
+                  Select Size {product.category === "gloves" ? "(Weight)" : ""}
                   <span className="text-red-500 ml-1">*</span>
                 </label>
                 <div className="flex flex-wrap gap-3">
-                  {product.sizes.map((size) => (
-                    <button
-                      key={String(size)}
-                      type="button"
-                      onClick={() => setSelectedSize(size as GloveSize | ClothingSize | ShinguardSize)}
-                      className={`px-6 py-3 rounded-lg font-semibold border-2 transition ${
-                        selectedSize === size
-                          ? "border-secondary bg-secondary text-neutral-950"
-                          : "border-neutral-800 bg-neutral-900 text-neutral-100 hover:border-neutral-700"
-                      }`}
-                    >
-                      {String(size)}
-                    </button>
-                  ))}
+                  {product.sizes.map((size) => {
+                    const variant = product.variants?.find(
+                      (v) => v.size === size
+                    );
+                    const isOutOfStock =
+                      !variant?.inStock || variant.inventoryQty === 0;
+                    const stockQty = variant?.inventoryQty || 0;
+
+                    return (
+                      <div key={String(size)} className="relative">
+                        <button
+                          type="button"
+                          onClick={() =>
+                            !isOutOfStock &&
+                            setSelectedSize(
+                              size as GloveSize | ClothingSize | ShinguardSize
+                            )
+                          }
+                          disabled={isOutOfStock}
+                          className={`px-6 py-3 rounded-lg font-semibold border-2 transition relative ${
+                            isOutOfStock
+                              ? "border-neutral-800 bg-neutral-800/50 text-neutral-600 cursor-not-allowed opacity-50"
+                              : selectedSize === size
+                              ? "border-secondary bg-secondary text-neutral-950"
+                              : "border-neutral-800 bg-neutral-900 text-neutral-100 hover:border-neutral-700"
+                          }`}
+                        >
+                          {String(size)}
+                          {isOutOfStock && (
+                            <span className="absolute inset-0 flex items-center justify-center">
+                              <span className="absolute w-full h-0.5 bg-red-500 rotate-45"></span>
+                            </span>
+                          )}
+                        </button>
+                        {!isOutOfStock && stockQty <= 5 && (
+                          <span className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs px-2 py-0.5 rounded-full">
+                            {stockQty}
+                          </span>
+                        )}
+                      </div>
+                    );
+                  })}
                 </div>
                 {selectedSize && (
-                  <p className="text-sm text-secondary">
-                    Selected: {String(selectedSize)}
-                  </p>
+                  <div className="space-y-1">
+                    <p className="text-sm text-secondary">
+                      Selected: {String(selectedSize)}
+                    </p>
+                    {product.variants &&
+                      (() => {
+                        const variant = product.variants.find(
+                          (v) => v.size === selectedSize
+                        );
+                        if (variant && variant.inventoryQty <= 10) {
+                          return (
+                            <p className="text-sm text-orange-500">
+                              {variant.inventoryQty <= 5
+                                ? `Only ${variant.inventoryQty} left in stock!`
+                                : `${variant.inventoryQty} available`}
+                            </p>
+                          );
+                        }
+                        return null;
+                      })()}
+                  </div>
                 )}
               </div>
             )}
@@ -244,7 +353,9 @@ export default function ProductDetail() {
                   type="number"
                   min="1"
                   value={quantity}
-                  onChange={(e) => setQuantity(Math.max(1, Number(e.target.value)))}
+                  onChange={(e) =>
+                    setQuantity(Math.max(1, Number(e.target.value)))
+                  }
                   className="w-20 h-10 text-center bg-neutral-900 rounded-lg border border-neutral-800
                            text-neutral-100 focus:outline-none focus:ring-2 focus:ring-secondary"
                 />
@@ -270,7 +381,11 @@ export default function ProductDetail() {
                 }`}
               >
                 <ShoppingCart className="h-5 w-5" />
-                {addedToCart ? "Added to Cart!" : product.inStock ? "Add to Cart" : "Out of Stock"}
+                {addedToCart
+                  ? "Added to Cart!"
+                  : product.inStock
+                  ? "Add to Cart"
+                  : "Out of Stock"}
               </button>
 
               <div className="grid grid-cols-2 gap-3">
@@ -296,7 +411,9 @@ export default function ProductDetail() {
               <div className="flex items-start gap-3">
                 <Truck className="mt-1 h-5 w-5 shrink-0 text-secondary" />
                 <div>
-                  <h4 className="font-semibold text-neutral-100">Fast Delivery</h4>
+                  <h4 className="font-semibold text-neutral-100">
+                    Fast Delivery
+                  </h4>
                   <p className="text-sm text-neutral-400">
                     Free UK shipping on orders over £50
                   </p>
@@ -305,7 +422,9 @@ export default function ProductDetail() {
               <div className="flex items-start gap-3">
                 <Shield className="mt-1 h-5 w-5 shrink-0 text-secondary" />
                 <div>
-                  <h4 className="font-semibold text-neutral-100">Quality Guaranteed</h4>
+                  <h4 className="font-semibold text-neutral-100">
+                    Quality Guaranteed
+                  </h4>
                   <p className="text-sm text-neutral-400">
                     Authentic products from trusted brands
                   </p>
@@ -314,7 +433,9 @@ export default function ProductDetail() {
               <div className="flex items-start gap-3">
                 <RotateCcw className="mt-1 h-5 w-5 shrink-0 text-secondary" />
                 <div>
-                  <h4 className="font-semibold text-neutral-100">Easy Returns</h4>
+                  <h4 className="font-semibold text-neutral-100">
+                    Easy Returns
+                  </h4>
                   <p className="text-sm text-neutral-400">
                     30-day return policy on all items
                   </p>

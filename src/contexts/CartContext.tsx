@@ -6,22 +6,40 @@ export type ShinguardSize = "S" | "M" | "L" | "XL";
 export type HandWrapSize = "1m" | "2m";
 export type MMAGloveSize = "Medium" | "Large" | "XL";
 
+export interface ProductVariant {
+  size: string;
+  sku: string;
+  price: number;
+  compareAtPrice?: number;
+  inventoryQty: number;
+  inStock: boolean;
+}
+
 export interface Product {
   id: number;
   name: string;
-  category: "Boxing Gloves" | "MMA Gloves" | "shorts" | "shinguards" | "protection" | "accessories" | "pads" | "bags";
+  category:
+    | "gloves"
+    | "shorts"
+    | "shinguards"
+    | "protection"
+    | "accessories"
+    | "pads"
+    | "bags";
   price: number;
   specialPrice?: number; // For sale/special pricing
   image: string;
   description: string;
   inStock: boolean;
   stockQuantity?: number; // Available stock quantity from CSV
-  badge?: "new" | "sale" | "hot"; // Product status badges
+  badge?: "new" | "sale" | "hot" | "featured"; // Product status badges
   brand?: string; // Product brand/manufacturer
   sizes?: string[]; // Available sizes (flexible to support various size formats from CSV)
+  colors?: string[]; // Available colors
   hasSizes?: boolean; // Flag to indicate if product has size variants
   weight?: number; // Product weight in grams (for shipping calculation)
   sku?: string; // Product SKU from supplier
+  variants?: ProductVariant[]; // Variant-level stock and pricing information
 }
 
 export interface CartItem extends Product {
@@ -33,13 +51,19 @@ interface CartContextType {
   cart: CartItem[];
   addToCart: (product: Product, selectedSize?: string) => void;
   removeFromCart: (productId: number, selectedSize?: string) => void;
-  updateQuantity: (productId: number, quantity: number, selectedSize?: string) => void;
+  updateQuantity: (
+    productId: number,
+    quantity: number,
+    selectedSize?: string
+  ) => void;
   clearCart: () => void;
   getCartTotal: () => number;
   getCartCount: () => number;
 }
 
-export const CartContext = createContext<CartContextType | undefined>(undefined);
+export const CartContext = createContext<CartContextType | undefined>(
+  undefined
+);
 
 export function useCart() {
   const context = useContext(CartContext);
@@ -134,5 +158,3 @@ export function CartProvider({ children }: { children: ReactNode }) {
     </CartContext.Provider>
   );
 }
-
-

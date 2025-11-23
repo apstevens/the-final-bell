@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { X, ShoppingCart, Minus, Plus, Trash2, Truck, Package } from "lucide-react";
 import { useCart, type CartItem } from "../contexts/CartContext";
 import { calculateShipping, FREE_SHIPPING_THRESHOLD, formatWeight } from "../data/shipping";
+import { createCheckoutSession } from "../services/api";
 
 export default function Cart() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,31 +13,39 @@ export default function Cart() {
     setIsProcessing(true);
 
     try {
-      // Call your backend to create a Stripe checkout session
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/create-checkout-session`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          items: cart.map((item: CartItem) => ({
-            id: item.id,
-            name: item.name,
-            price: item.price,
-            quantity: item.quantity,
-            image: item.image,
-          })),
-        }),
-      });
+      console.log("[Checkout] Starting checkout process...");
 
-      const { sessionId } = await response.json();
+      // Call backend to create a Stripe checkout session
+      console.log("[Checkout] Creating checkout session with items:", cart.length);
+      const response = await createCheckoutSession(
+        cart.map((item: CartItem) => ({
+          id: item.id,
+          name: item.name,
+          price: item.price,
+          quantity: item.quantity,
+          image: item.image,
+        }))
+      );
 
-      // Redirect to Stripe Checkout
-      window.location.href = `/checkout?session_id=${sessionId}`;
+      console.log("[Checkout] Response:", response);
+
+      // Redirect to Stripe Checkout URL
+      if (response.url) {
+        console.log("[Checkout] Redirecting to Stripe Checkout URL:", response.url);
+        window.location.href = response.url;
+      } else if (response.sessionId) {
+        // Fallback: construct Stripe checkout URL manually
+        console.log("[Checkout] Constructing Stripe URL from session ID:", response.sessionId);
+        const stripeUrl = `https://checkout.stripe.com/pay/${response.sessionId}`;
+        console.log("[Checkout] Redirecting to:", stripeUrl);
+        window.location.href = stripeUrl;
+      } else {
+        throw new Error("No checkout URL or session ID received from server");
+      }
     } catch (error) {
-      console.error("Checkout error:", error);
-      alert("Something went wrong. Please try again.");
-    } finally {
+      console.error("[Checkout] Error:", error);
+      const errorMessage = error instanceof Error ? error.message : "Something went wrong. Please try again.";
+      alert(errorMessage);
       setIsProcessing(false);
     }
   };
