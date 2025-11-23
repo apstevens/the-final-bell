@@ -318,7 +318,7 @@ export function mapBackendProduct(backendProduct: BackendProduct, id: number): P
 
   const hasSizes = backendProduct.variants.length > 1 || hasRealSizes;
 
-  // Map variants with stock information
+  // Map variants with stock information (keep lightweight for cart)
   const variants = hasSizes
     ? backendProduct.variants.map((v) => ({
         size: mapSizeToOurFormat(v.option1Name, v.option1Value),
@@ -328,7 +328,7 @@ export function mapBackendProduct(backendProduct: BackendProduct, id: number): P
         inventoryQty: v.inventoryQty,
         inStock: v.inStock,
       }))
-    : undefined;
+    : [];
 
   // Extract and sort sizes
   const sizes = hasSizes
