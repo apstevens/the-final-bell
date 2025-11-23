@@ -42,9 +42,17 @@ export interface Product {
   variants?: ProductVariant[]; // Variant-level stock and pricing information
 }
 
-export interface CartItem extends Product {
+export interface CartItem {
+  id: number;
+  name: string;
+  price: number;
+  image: string;
+  category: Product["category"];
   quantity: number;
-  selectedSize?: string; // Selected size for this cart item
+  selectedSize?: string;
+  sku?: string;
+  weight?: number;
+  hasSizes?: boolean;
 }
 
 interface CartContextType {
@@ -94,7 +102,21 @@ export function CartProvider({ children }: { children: ReactNode }) {
         );
       }
 
-      return [...prevCart, { ...product, quantity: 1, selectedSize }];
+      // Only store essential cart data (avoid circular references from variants)
+      const cartItem: CartItem = {
+        id: product.id,
+        name: product.name,
+        price: product.specialPrice || product.price,
+        image: product.image,
+        category: product.category,
+        quantity: 1,
+        selectedSize,
+        sku: product.sku,
+        weight: product.weight,
+        hasSizes: product.hasSizes,
+      };
+
+      return [...prevCart, cartItem];
     });
   };
 
