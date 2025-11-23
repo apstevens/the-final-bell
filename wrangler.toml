@@ -1,3 +1,5 @@
 name = "final-bell"
-pages_build_output_dir = "dist"
 compatibility_date = "2025-11-23"
+
+[assets]
+directory = "./dist"
