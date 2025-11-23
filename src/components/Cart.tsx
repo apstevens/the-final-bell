@@ -19,7 +19,7 @@ export default function Cart() {
       console.log("[Checkout] Creating checkout session with items:", cart.length);
       const response = await createCheckoutSession(
         cart.map((item: CartItem) => ({
-          id: item.id,
+          id: String(item.id),
           name: item.name,
           price: item.price,
           quantity: item.quantity,
