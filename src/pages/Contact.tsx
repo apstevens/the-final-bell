@@ -8,7 +8,7 @@ export default function About() {
   useMeta({
     title: "Contact | The Final Bell",
     description:
-      "Get in touch with The Final Bell for boxing fitness and Muay Thai sessions in Chelmsford and Witham.",
+      "Get in touch with The Final Bell for boxing fitness and Muay Thai sessions in Honiton.",
     canonical: "https://www.finalbell.co.uk/contact",
   });
 
@@ -22,7 +22,7 @@ export default function About() {
         {/* Heading */}
         <header className="mb-6">
           <p className="mt-2 text-secondary text-3xl font-bold md:text-4xl">
-            Boxing Fitness &amp; Muay Thai — Chelmsford / Witham (Saturdays)
+            Boxing Fitness &amp; Muay Thai — Honiton (Saturdays)
           </p>
         </header>
 
@@ -63,7 +63,7 @@ export default function About() {
               </li>
               <li className="flex items-center gap-3 pt-4">
                 <MapPin className="h-5 w-5 text-secondary" />
-                <span>Chelmsford, UK</span>
+                <span>Honiton, UK</span>
               </li>
             </ul>
 
